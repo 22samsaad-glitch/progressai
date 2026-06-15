@@ -1,0 +1,5 @@
+# Publish this folder as-is (static site, no build step).
+# Ensures every deploy includes index.html, thank-you.html, and the logo assets.
+[build]
+  publish = "."
+  command = ""

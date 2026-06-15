@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thanks — ProgressAI</title>
+<meta name="description" content="Your strategy call request has been received." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  :root {
+    --ink: #0A0E14;
+    --blue: #2D6FF0;
+    --blue-deep: #1A5BD9;
+  }
+  body {
+    background: #0A0E14;
+    color: #fff;
+    font-family: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise .9s cubic-bezier(.2,.7,.2,1) .1s forwards;
+  }
+  @keyframes rise {
+    to { opacity: 1; transform: none; }
+  }
+  .logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+  .logo-wrap img {
+    display: block;
+    height: auto;
+    max-height: 56px;
+    width: auto;
+    object-fit: contain;
+  }
+  h1 {
+    font-family: 'Headland One', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5.6vw, 60px);
+    line-height: 1.08;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin: 0 0 22px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--blue);
+  }
+  p {
+    color: rgba(255,255,255,.72);
+    font-size: 18px;
+    max-width: 520px;
+    margin: 0 auto 40px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px 24px;
+    border-radius: 12px;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid var(--blue);
+    transition: transform .25s ease, background-color .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .btn .arr { transition: transform .3s cubic-bezier(.2,.7,.2,1); display: inline-block; }
+  .btn:hover {
+    background: var(--blue-deep);
+    border-color: var(--blue-deep);
+    box-shadow: 0 14px 32px -12px rgba(45,111,240,.6);
+  }
+  .btn:hover .arr { transform: translateX(4px); }
+  @media (prefers-reduced-motion: reduce) {
+    .wrap { opacity: 1; transform: none; animation: none; }
+    .btn, .btn .arr { transition: none; }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="logo-wrap">
+      <img src="progressai_logo_hd.png" alt="ProgressAI" />
+    </div>
+    <h1><span data-fr="Merci. ">Thanks. </span><em data-fr="Nous vous contacterons bientôt.">We will be in touch.</em></h1>
+    <p data-fr="Nous avons bien reçu vos coordonnées et nous vous écrirons sous peu pour fixer une heure pour votre appel stratégique gratuit. Surveillez votre boîte de réception.">We have got your details and we will email you shortly to lock in a time for your free strategy call. Keep an eye on your inbox.</p>
+    <a href="index.html" class="btn"><span data-fr="Retour à ProgressAI">Back to ProgressAI</span> <span class="arr">→</span></a>
+  </main>
+  <script>
+  (function(){
+    const META = {
+      en: { title: "Thanks — ProgressAI", desc: "Your strategy call request has been received." },
+      fr: { title: "Merci — ProgressAI", desc: "Votre demande d'appel stratégique a bien été reçue." }
+    };
+    let lang = null;
+    try { lang = localStorage.getItem('pai-lang'); } catch (e) {}
+    if (!lang) lang = (navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+    lang = (lang === 'fr') ? 'fr' : 'en';
+    document.documentElement.lang = lang;
+    document.title = META[lang].title;
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', META[lang].desc);
+    document.querySelectorAll('[data-fr]').forEach(el => {
+      el.dataset.en = el.innerHTML;
+      el.innerHTML = (lang === 'fr') ? el.dataset.fr : el.dataset.en;
+    });
+  })();
+  </script>
+</body>
+</html>

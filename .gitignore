@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Local dev server logs
+*.log
+
+# Netlify
+.netlify/
