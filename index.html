@@ -3,581 +3,45 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ProgressAI — AI Audits for HVAC Companies</title>
-<meta name="description" content="ProgressAI runs AI audits for HVAC companies. We find exactly where you are losing jobs and hand you a clear roadmap of the AI systems to fix it." />
+<title>ProgressAI: AI Process Assessments for HVAC Companies</title>
+<meta name="description" content="We look at how work moves through your HVAC business, then show you what can run itself, what shouldn't, and what each change would actually take. From $0." />
+<link rel="canonical" href="https://progressai.ca/" />
+<link rel="alternate" hreflang="en" href="https://progressai.ca/" />
+<link rel="alternate" hreflang="fr" href="https://progressai.ca/fr/" />
+<link rel="alternate" hreflang="x-default" href="https://progressai.ca/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://progressai.ca/" />
+<meta property="og:title" content="ProgressAI: AI Process Assessments for HVAC Companies" />
+<meta property="og:description" content="We look at how work moves through your HVAC business, then show you what can run itself, what shouldn't, and what each change would actually take. From $0." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ProgressAI: AI Process Assessments for HVAC Companies" />
+<meta name="twitter:description" content="We look at how work moves through your HVAC business, then show you what can run itself, what shouldn't, and what each change would actually take. From $0." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Headland+One&display=swap" rel="stylesheet" />
 
-<style>
-  *,*::before,*::after { box-sizing: border-box; }
-  html,body { margin:0; padding:0; }
-  body {
-    font-family: 'Geist', system-ui, -apple-system, sans-serif;
-    color: #0A0E14;
-    background: #FFFFFF;
-    line-height: 1.6;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-  }
-  img { max-width: 100%; display: block; }
-  a { color: inherit; text-decoration: none; }
-  button { font-family: inherit; cursor: pointer; border: none; background: none; }
-
-  :root {
-    --bg: #FFFFFF;
-    --bg-soft: #F7F6F5;
-    --ink: #0A0E14;
-    --ink-soft: #69645E;
-    --ink-faint: #A39E97;
-    --line: #EDEBE8;
-    --line-soft: #F4F2EF;
-    --blue: #2D6FF0;
-    --blue-deep: #1A5BD9;
-    --blue-tint: #E8EFFE;
-    --radius: 20px;
-    --radius-lg: 32px;
-    --container: 1180px;
-    --gutter: clamp(20px, 4vw, 40px);
-    --section: clamp(80px, 10vw, 140px);
-  }
-
-  .serif { font-family: 'Headland One', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; }
-  h1, h2, h3, h4 {
-    font-family: 'Headland One', Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    line-height: 1.02;
-    margin: 0;
-    color: var(--ink);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: none;
-  }
-  h1 { font-size: clamp(44px, 7.2vw, 96px); letter-spacing: -0.04em; }
-  h2 { font-size: clamp(36px, 5.2vw, 64px); }
-  h3 { font-size: clamp(22px, 2.2vw, 28px); }
-  p  { margin: 0; }
-
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Geist', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .eyebrow::before {
-    content:""; width: 18px; height: 1px; background: var(--ink-soft);
-  }
-
-  .container {
-    width: 100%;
-    max-width: var(--container);
-    padding: 0 var(--gutter);
-    margin: 0 auto;
-  }
-  section { padding: var(--section) 0; }
-
-  .nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    transition: background-color .3s ease, box-shadow .3s ease, border-color .3s ease;
-    border-bottom: 1px solid transparent;
-  }
-  .nav-inner {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    min-height: 88px;
-    padding: 12px 0;
-    overflow: visible;
-  }
-  .nav.scrolled {
-    background: rgba(255,255,255,.85);
-    backdrop-filter: saturate(180%) blur(14px);
-    -webkit-backdrop-filter: saturate(180%) blur(14px);
-    border-bottom-color: var(--line);
-  }
-  .logo {
-    display: flex; align-items: center; gap: 10px;
-    font-family: 'Headland One', serif; font-size: 22px; letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  .logo-mark {
-    display: inline-flex; align-items: center;
-    overflow: visible;
-  }
-  .logo-mark img {
-    display: block;
-    width: auto; height: auto;
-    object-fit: contain;
-  }
-  .nav .logo-mark img { max-height: 60px; }
-  footer .logo-mark img { max-height: 48px; }
-
-  .nav-links {
-    display: flex; align-items: center; gap: 2.5rem;
-    list-style: none; margin: 0; padding: 0;
-    justify-self: center;
-  }
-  .nav-links a {
-    font-size: 1.05rem; font-weight: 500; color: var(--ink); position: relative;
-    transition: color .2s ease;
-  }
-  .nav-links a::after {
-    content:""; position: absolute; left: 0; right: 0; bottom: -6px;
-    height: 1px; background: var(--blue);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform .35s cubic-bezier(.2,.7,.2,1);
-  }
-  .nav-links a:hover::after { transform: scaleX(1); }
-  .nav-cta-wrap { display: flex; align-items: center; gap: 18px; justify-self: end; }
-
-  .lang-switch button {
-    font-family: 'Geist', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--blue);
-    line-height: 1;
-    padding: 0;
-    min-width: 28px;
-    text-align: center;
-    transition: color .2s ease;
-  }
-  .lang-switch button:hover { color: var(--blue-deep); }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-size: 15px; font-weight: 500;
-    padding: 15px 24px;
-    border-radius: 12px;
-    transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
-    border: 1px solid transparent;
-    line-height: 1; white-space: nowrap;
-  }
-  .btn .arr { transition: transform .3s cubic-bezier(.2,.7,.2,1); display: inline-block; }
-  .btn:hover .arr { transform: translateX(4px); }
-  .btn-primary { background: var(--blue); color: #fff; }
-  .btn-primary:hover { background: var(--blue-deep); box-shadow: 0 10px 30px -10px rgba(45,111,240,.45); }
-  .btn-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
-  .btn-outline:hover { background: var(--ink); color: #fff; }
-  .btn-light-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
-  .btn-light-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
-  .btn-small { padding: 11px 18px; font-size: 14px; }
-
-  .hero {
-    padding-top: calc(88px + clamp(24px, 5vw, 64px));
-    padding-bottom: 0;
-    text-align: center;
-    position: relative;
-  }
-  .hero .container { max-width: 1080px; }
-  .hero h1 { margin: 26px 0 28px; }
-  .hero h1 .accent { color: var(--blue); font-style: italic; }
-  .hero p.lede {
-    max-width: 680px; margin: 0 auto;
-    font-size: clamp(17px, 1.5vw, 19px);
-    color: var(--ink-soft); line-height: 1.55;
-  }
-  .hero-ctas {
-    display: flex; flex-wrap: wrap; justify-content: center;
-    gap: 14px; margin: 38px 0 24px;
-  }
-  .trust {
-    display: inline-flex; align-items: center; gap: 12px;
-    color: var(--ink-soft); font-size: 14px;
-    margin-top: 8px;
-  }
-  .stars { color: #F5A623; letter-spacing: 2px; font-size: 15px; }
-
-  .ticker {
-    margin-top: clamp(70px, 9vw, 110px);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
-    background: #F7F6F5;
-  }
-  .ticker-track {
-    display: flex; width: max-content;
-    animation: tick 38s linear infinite;
-    padding: 22px 0;
-  }
-  .ticker-item {
-    font-family: 'Headland One', serif;
-    font-size: clamp(20px, 2.4vw, 30px);
-    color: var(--ink);
-    padding: 0 40px;
-    display: inline-flex; align-items: center; gap: 40px;
-    white-space: nowrap;
-  }
-  .ticker-item::after {
-    content: "✦"; color: var(--blue); font-size: 14px; opacity: .8;
-  }
-  @keyframes tick {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .ticker-track { animation: none; }
-  }
-
-  .stats {
-    background: #0A0E14;
-    color: #fff;
-  }
-  .stats .container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; }
-  .stats .container > div { position: relative; padding-top: 28px; }
-  .stats .container > div::before {
-    content: "";
-    display: block;
-    width: 44px;
-    height: 2px;
-    background: #2D6FF0;
-    margin-bottom: 28px;
-  }
-  .stat-num {
-    font-family: 'Headland One', serif;
-    font-size: clamp(56px, 7vw, 96px);
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: #fff;
-    font-variant-numeric: tabular-nums;
-    font-feature-settings: "tnum" 1;
-  }
-  .stat-num .count { display: inline-block; contain: layout paint; }
-  .stat-num .unit { color: var(--blue); }
-  .stat-label {
-    margin-top: 18px;
-    color: rgba(255,255,255,.66);
-    font-size: 15px; line-height: 1.55;
-    max-width: 280px;
-  }
-  @media (max-width: 820px) {
-    .stats .container { grid-template-columns: 1fr; gap: 50px; }
-    .stat-label { max-width: none; }
-  }
-
-  .section-head { max-width: 760px; margin-bottom: 64px; }
-  .section-head h2 { margin: 18px 0 22px; }
-  .section-head p { color: var(--ink-soft); font-size: 18px; max-width: 640px; }
-
-  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-
-  .card {
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    padding: 38px 34px;
-    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease;
-    position: relative;
-  }
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 30px 60px -30px rgba(46,26,6,.18);
-    border-color: #D7D8DD;
-  }
-  .card-num {
-    font-family: 'Headland One', serif;
-    font-size: 14px;
-    color: var(--blue);
-    letter-spacing: 0.08em;
-    margin-bottom: 18px;
-    display: inline-block;
-  }
-  .card h3 { margin-bottom: 14px; }
-  .card p { color: var(--ink-soft); font-size: 16px; line-height: 1.6; }
-
-  .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-  .step {
-    border-top: 1px solid var(--ink);
-    padding-top: 28px;
-    padding-right: 12px;
-  }
-  .step-num {
-    font-family: 'Headland One', serif;
-    font-size: 64px; line-height: 1;
-    color: var(--ink);
-    margin-bottom: 28px;
-    display: block;
-  }
-  .step h3 { margin-bottom: 12px; }
-  .step p { color: var(--ink-soft); font-size: 16px; }
-  @media (max-width: 820px) {
-    .process-grid { grid-template-columns: 1fr; gap: 36px; }
-  }
-
-  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 1px solid var(--line); }
-  .why-item {
-    border-bottom: 1px solid var(--line);
-    padding: 64px 0;
-    display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px;
-    align-items: start;
-  }
-  .why-item:nth-child(odd) { padding-right: 56px; border-right: 1px solid var(--line); }
-  .why-item:nth-child(even) { padding-left: 56px; }
-  .why-item h3 { font-size: clamp(26px, 2.6vw, 34px); line-height: 1.05; }
-  .why-item p { color: var(--ink-soft); font-size: 17px; line-height: 1.6; }
-  @media (max-width: 820px) {
-    .why-grid { grid-template-columns: 1fr; }
-    .why-item, .why-item:nth-child(odd), .why-item:nth-child(even) {
-      grid-template-columns: 1fr; padding: 44px 0; border-right: 0; gap: 18px;
-    }
-  }
-
-  .pricing-wrap { display: flex; justify-content: center; }
-  .price-card {
-    max-width: 720px; width: 100%;
-    background: #fff;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-lg);
-    padding: clamp(44px, 5vw, 72px) clamp(36px, 5vw, 64px);
-    text-align: left;
-    box-shadow: 0 60px 120px -55px rgba(46,26,6,.25);
-    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease;
-  }
-  .price-card:hover { transform: translateY(-4px); box-shadow: 0 70px 130px -50px rgba(46,26,6,.3); }
-  .badge {
-    display: inline-flex; align-items: center;
-    padding: 6px 14px;
-    background: var(--blue-tint); color: var(--blue);
-    border-radius: 999px;
-    font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 30px;
-  }
-  .price {
-    font-family: 'Headland One', serif;
-    font-size: clamp(72px, 8.4vw, 112px);
-    line-height: 1;
-    letter-spacing: -0.035em;
-    color: var(--ink);
-  }
-  .price-line { color: var(--ink-soft); margin-top: 18px; font-size: 18px; }
-  .price-list { list-style: none; padding: 0; margin: 40px 0 44px; }
-  .price-list li {
-    display: flex; gap: 14px; align-items: flex-start;
-    padding: 18px 0;
-    border-top: 1px solid var(--line-soft);
-    font-size: 17px; color: var(--ink);
-  }
-  .price-list li:first-child { border-top: 0; }
-  .price-list li::before {
-    content:""; flex: 0 0 8px; height: 8px; border-radius: 50%;
-    background: var(--blue); margin-top: 9px;
-  }
-  .price-note { margin-top: 22px; color: var(--ink-faint); font-size: 14px; text-align: center; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-
-  .faq-list { max-width: 820px; margin: 0 auto; }
-  .faq {
-    border-bottom: 1px solid var(--line);
-  }
-  .faq:first-child { border-top: 1px solid var(--line); }
-  .faq-q {
-    width: 100%; text-align: left;
-    display: flex; justify-content: space-between; align-items: center; gap: 24px;
-    padding: 28px 0;
-    font-family: 'Headland One', serif;
-    font-size: clamp(20px, 2vw, 24px);
-    color: var(--ink);
-    letter-spacing: -0.015em;
-    transition: color .2s ease;
-  }
-  .faq-q:hover { color: var(--blue); }
-  .faq-icon {
-    flex: 0 0 28px; width: 28px; height: 28px;
-    border: 1px solid var(--ink); border-radius: 50%;
-    position: relative;
-    transition: background-color .25s ease, border-color .25s ease, transform .35s ease;
-  }
-  .faq-icon::before, .faq-icon::after {
-    content:""; position: absolute; left: 50%; top: 50%;
-    width: 10px; height: 1px; background: var(--ink);
-    transform: translate(-50%, -50%);
-    transition: transform .35s ease, background-color .25s ease;
-  }
-  .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
-  .faq.open .faq-icon { background: var(--ink); }
-  .faq.open .faq-icon::before, .faq.open .faq-icon::after { background: #fff; }
-  .faq.open .faq-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
-  .faq-a {
-    max-height: 0; overflow: hidden;
-    transition: max-height .5s cubic-bezier(.2,.7,.2,1);
-  }
-  .faq-a-inner {
-    padding: 0 0 28px;
-    color: var(--ink-soft);
-    font-size: 17px;
-    max-width: 680px;
-    line-height: 1.65;
-  }
-
-  .final {
-    background: #0A0E14;
-    color: #fff;
-    text-align: center;
-    border-radius: 0;
-  }
-  .final h2 { color: #fff; max-width: 880px; margin: 0 auto 22px; }
-  .final p { color: rgba(255,255,255,.72); max-width: 620px; margin: 0 auto 36px; font-size: 18px; }
-  .final .btn-primary { background: #fff; color: var(--ink); }
-  .final .btn-primary:hover { background: var(--blue); color: #fff; box-shadow: 0 10px 30px -10px rgba(45,111,240,.55); }
-  .final .micro { color: rgba(255,255,255,.5); font-size: 14px; margin-top: 22px; }
-
-  .contact-form {
-    max-width: 760px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 22px;
-    text-align: left;
-  }
-  .contact-form .field { display: flex; flex-direction: column; }
-  .contact-form .field-full { grid-column: 1 / -1; }
-  .contact-form label {
-    font-size: 14px; font-weight: 500;
-    color: rgba(255,255,255,.78);
-    letter-spacing: 0.01em;
-    margin-bottom: 10px;
-  }
-  .contact-form label .opt { opacity: .55; font-weight: 400; margin-left: 4px; }
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    font-family: inherit;
-    font-size: 17px;
-    color: var(--ink);
-    background: #fff;
-    border: 1px solid transparent;
-    border-radius: 12px;
-    padding: 16px 18px;
-    box-sizing: border-box;
-    transition: border-color .2s ease, box-shadow .2s ease;
-  }
-  .contact-form input::placeholder,
-  .contact-form textarea::placeholder { color: var(--ink-faint); }
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--blue);
-    box-shadow: 0 0 0 4px rgba(45,111,240,.18);
-  }
-  .contact-form textarea { resize: vertical; min-height: 110px; line-height: 1.5; }
-  .contact-form .form-submit {
-    grid-column: 1 / -1;
-    width: 100%;
-    justify-content: center;
-    font-size: 16px;
-    padding: 18px 24px;
-    background: var(--blue);
-    color: #fff;
-    border: 1px solid var(--blue);
-    margin-top: 6px;
-    cursor: pointer;
-  }
-  .contact-form .form-submit:hover {
-    background: var(--blue-deep);
-    border-color: var(--blue-deep);
-    box-shadow: 0 14px 32px -12px rgba(45,111,240,.6);
-  }
-  @media (max-width: 640px) {
-    .contact-form { grid-template-columns: 1fr; gap: 16px; }
-    .contact-form .field-full { grid-column: auto; }
-    .contact-form .form-submit { grid-column: auto; }
-  }
-
-  footer {
-    padding: 60px 0 50px;
-    border-top: 1px solid var(--line);
-  }
-  .footer-inner {
-    display: flex; justify-content: space-between; align-items: center; gap: 24px;
-    flex-wrap: wrap;
-  }
-  .footer-meta { color: var(--ink-soft); font-size: 14px; }
-  .footer-copy { color: var(--ink-faint); font-size: 13px; }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
-    transition-delay: var(--delay, 0s);
-    will-change: opacity, transform;
-  }
-  .reveal.in {
-    opacity: 1; transform: none;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
-  }
-
-  .menu-btn {
-    display: none;
-    width: 40px; height: 40px;
-    border-radius: 999px; border: 1px solid var(--line);
-    align-items: center; justify-content: center;
-  }
-  .menu-btn span {
-    width: 16px; height: 1.5px; background: var(--ink); position: relative; display: block;
-  }
-  .menu-btn span::before, .menu-btn span::after {
-    content:""; position: absolute; left: 0; width: 16px; height: 1.5px; background: var(--ink);
-  }
-  .menu-btn span::before { top: -5px; }
-  .menu-btn span::after { top: 5px; }
-
-  @media (max-width: 880px) {
-    .nav-links { display: none; }
-    .menu-btn { display: inline-flex; }
-    .nav-cta-wrap .btn { display: none; }
-    .grid-2, .grid-4 { grid-template-columns: 1fr; }
-    .why-grid { grid-template-columns: 1fr; }
-  }
-
-  .mobile-drawer {
-    position: fixed; inset: 88px 0 0 0;
-    background: #fff; z-index: 99;
-    transform: translateY(-12px); opacity: 0; pointer-events: none;
-    transition: opacity .3s ease, transform .3s ease;
-    border-top: 1px solid var(--line);
-  }
-  .mobile-drawer.open { opacity: 1; transform: none; pointer-events: auto; }
-  .mobile-drawer ul {
-    list-style: none; padding: 30px var(--gutter); margin: 0;
-    display: flex; flex-direction: column; gap: 6px;
-  }
-  .mobile-drawer a {
-    display: block;
-    font-family: 'Headland One', serif;
-    font-size: 28px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .mobile-drawer .btn { margin-top: 22px; }
-</style>
+<link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="#" class="logo" aria-label="ProgressAI home">
+    <a href="/" class="logo" aria-label="ProgressAI home">
       <span class="logo-mark"><img src="progressai_logo_hd.png" alt="ProgressAI" /></span>
     </a>
     <ul class="nav-links">
-      <li><a href="#services" data-fr="Services">Services</a></li>
-      <li><a href="#process" data-fr="Démarche">Process</a></li>
-      <li><a href="#pricing" data-fr="Tarifs">Pricing</a></li>
-      <li><a href="#faq" data-fr="FAQ">FAQ</a></li>
+      <li><a href="#services">What we check</a></li>
+      <li><a href="#process">How it works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-cta-wrap">
       <div class="lang-switch">
-        <button type="button" id="langToggle" aria-label="Change language / Changer de langue">FR</button>
+        <a href="/fr/" id="langToggle" hreflang="fr" aria-label="Passer au français">FR</a>
       </div>
-      <a href="#book" class="btn btn-primary btn-small"><span data-fr="Réserver un appel stratégique gratuit">Book a Free Strategy Call</span> <span class="arr">→</span></a>
+      <a href="#book" class="btn btn-primary btn-small">Get your assessment <span class="arr">→</span></a>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span></button>
     </div>
   </div>
@@ -585,94 +49,141 @@
 
 <div class="mobile-drawer" id="drawer">
   <ul>
-    <li><a href="#services" data-fr="Services">Services</a></li>
-    <li><a href="#process" data-fr="Démarche">Process</a></li>
-    <li><a href="#pricing" data-fr="Tarifs">Pricing</a></li>
-    <li><a href="#faq" data-fr="FAQ">FAQ</a></li>
-    <li><a href="#book" class="btn btn-primary"><span data-fr="Réserver un appel stratégique gratuit">Book a Free Strategy Call</span> <span class="arr">→</span></a></li>
+    <li><a href="#services">What we check</a></li>
+    <li><a href="#process">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#book" class="btn btn-primary">Get your assessment <span class="arr">→</span></a></li>
   </ul>
 </div>
 
 <header class="hero">
-  <div class="container">
-    <span class="eyebrow reveal" data-fr="Audits IA pour entreprises de CVC">AI Audits for HVAC Companies</span>
-    <h1 class="reveal" style="--delay:.08s">
-      <span data-fr="L'entreprise de CVC moyenne manque ">The average HVAC company misses </span><span class="accent" data-fr="40&#160;%">40%</span><span data-fr=" de ses appels. Nous corrigeons cela avec l'IA."> of its calls. We fix that with AI.</span>
-    </h1>
-    <p class="lede reveal" style="--delay:.16s" data-fr="ProgressAI trouve exactement où votre entreprise perd des contrats, puis vous remet une feuille de route claire des systèmes d'IA qui captent chaque appel, relancent chaque client potentiel et réservent plus de travail.">
-      ProgressAI finds exactly where your business is losing jobs, then hands you a clear roadmap of the AI systems that will capture every call, follow up every lead, and book more work.
-    </p>
-    <div class="hero-ctas reveal" style="--delay:.22s">
-      <a href="#book" class="btn btn-primary"><span data-fr="Réserver un appel stratégique gratuit">Book a Free Strategy Call</span> <span class="arr">→</span></a>
-      <a href="#process" class="btn btn-outline"><span data-fr="Voir comment ça marche">See How It Works</span> <span class="arr">→</span></a>
+  <div class="container hero-split">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">AI process assessments for HVAC companies</span>
+      <h1 class="reveal" style="--delay:.08s">
+        Most of what your team does by hand <span class="accent">doesn't have to be.</span>
+      </h1>
+      <p class="lede reveal" style="--delay:.16s">
+        We look at how work actually moves through your business, then show you which parts can run themselves, which ones shouldn't, and exactly what each one would take.
+      </p>
+      <div class="hero-ctas reveal" style="--delay:.22s">
+        <a href="#book" data-pick="free" class="btn btn-primary">Get your free first look <span class="arr">→</span></a>
+        <a href="#pricing" class="btn btn-outline">See pricing <span class="arr">→</span></a>
+      </div>
+      <div class="hero-trust reveal" style="--delay:.3s">Refund guarantee · Built for HVAC</div>
     </div>
-    <div class="trust reveal" style="--delay:.3s">
-      <span class="stars" aria-hidden="true">★★★★★</span>
-      <span data-fr="Conçu spécialement pour les entreprises de CVC">Built specifically for HVAC companies</span>
+    <div class="hero-visual reveal" style="--delay:.2s" aria-hidden="true">
+      <div class="sample-page">
+        <div class="sample-bar">
+          <span class="sb-title">Sample HVAC Co · Assessment</span>
+          <span class="sb-tag">Preview</span>
+        </div>
+        <div class="sample-body">
+          <div class="sample-kicker">What runs by hand today</div>
+          <div class="sample-row"><span class="dot dot-bad"></span><span class="r-label">After-hours calls</span><span class="r-val">Owner's cell</span></div>
+          <div class="sample-row"><span class="dot dot-bad"></span><span class="r-label">Quote follow-up</span><span class="r-val">By memory</span></div>
+          <div class="sample-row"><span class="dot dot-warn"></span><span class="r-label">Booking reminders</span><span class="r-val">Retyped daily</span></div>
+          <div class="sample-row"><span class="dot dot-ok"></span><span class="r-label">Review requests</span><span class="r-val">Some jobs</span></div>
+          <div class="sample-note">Each item marked can run itself, should stay human, or is fine as is.</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="ticker reveal" style="--delay:.4s" aria-hidden="true">
-    <div class="ticker-track" id="ticker">
-      <span class="ticker-item" data-fr="Ne manquez plus aucun appel">Never miss a call</span>
-      <span class="ticker-item" data-fr="Répondez en moins de 60 secondes">Respond in under 60 seconds</span>
-      <span class="ticker-item" data-fr="Récupérez les contrats perdus">Win back lost jobs</span>
-      <span class="ticker-item" data-fr="Automatisez les relances">Automate the follow up</span>
-      <span class="ticker-item" data-fr="Réservez plus de travail">Book more work</span>
-      <span class="ticker-item" data-fr="Ne manquez plus aucun appel">Never miss a call</span>
-      <span class="ticker-item" data-fr="Répondez en moins de 60 secondes">Respond in under 60 seconds</span>
-      <span class="ticker-item" data-fr="Récupérez les contrats perdus">Win back lost jobs</span>
-      <span class="ticker-item" data-fr="Automatisez les relances">Automate the follow up</span>
-      <span class="ticker-item" data-fr="Réservez plus de travail">Book more work</span>
-    </div>
-  </div>
 </header>
-
-<section class="stats">
-  <div class="container">
-    <div class="reveal">
-      <div class="stat-num"><span class="count" data-target="40" data-suffix="%" data-suffix-fr="&#160;%">0%</span></div>
-      <div class="stat-label" data-fr="des appels entrants restent sans réponse dans l'entreprise de CVC moyenne, et la plupart des propriétaires l'ignorent">of inbound calls go unanswered at the average HVAC company, and most owners have no idea</div>
-    </div>
-    <div class="reveal" style="--delay:.12s">
-      <div class="stat-num"><span class="count" data-target="5" data-suffix=" min">0 min</span></div>
-      <div class="stat-label" data-fr="suffisent pour qu'un client potentiel se refroidisse, et la plupart des entreprises répondent bien plus lentement">is all it takes for a lead to go cold, and most shops respond far slower</div>
-    </div>
-    <div class="reveal" style="--delay:.24s">
-      <div class="stat-num"><span class="count" data-target="50000" data-prefix="$" data-prefix-fr="" data-suffix-fr="&#160;$">$0</span></div>
-      <div class="stat-label" data-fr="en contrats perdus qu'un audit typique révèle dès le premier examen">in lost jobs a typical audit uncovers in the first review</div>
-    </div>
-  </div>
-</section>
 
 <section id="services">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow reveal" data-fr="Services">Services</span>
-      <h2 class="reveal" style="--delay:.08s"><span data-fr="Là où vous perdez des contrats. ">Where you are losing jobs. </span><em style="font-style:italic;color:var(--blue);" data-fr="Et quoi corriger en premier.">And what to fix first.</em></h2>
-      <p class="reveal" style="--delay:.16s" data-fr="La plupart des entreprises de CVC n'ont pas un problème de clients potentiels. Elles ont un problème de relance. Voici par où l'argent s'échappe, et les systèmes d'IA que votre audit identifiera pour colmater la fuite.">Most HVAC companies do not have a lead problem. They have a follow up problem. Here is where the money leaks out, and the AI systems your audit will identify to plug it.</p>
+      <span class="eyebrow reveal">What we look at</span>
+      <h2 class="reveal" style="--delay:.08s">The parts of your day that <em style="font-style:italic;color:var(--blue);">still run by hand.</em></h2>
+      <p class="reveal" style="--delay:.16s">These are the things we look at: how work actually moves through your shop, and which parts a machine could handle. Not every one of these should be automated. Part of the assessment is telling you which ones to leave alone. You probably already know roughly where the time goes. What's harder is knowing which of it is worth handing to a machine, and what that would actually involve.</p>
     </div>
     <div class="grid-4">
       <div class="card reveal">
-        <span class="card-num" data-fr="01 / SERVICE">01 / SERVICE</span>
-        <h3 data-fr="Texto automatique après un appel manqué">Missed Call Text Back</h3>
-        <p data-fr="Nous vous montrons comment un texto automatique instantané peut récupérer chaque client que vous auriez perdu à cause d'un appel manqué.">We show you how an instant automated text can capture every customer you would have lost to a missed call.</p>
+        <span class="card-num">01 / LOOK</span>
+        <h3>After-hours and missed calls</h3>
+        <p>Where a call goes at 8pm or on a Saturday, and who ends up handling it. Usually the owner.</p>
       </div>
       <div class="card reveal" style="--delay:.08s">
-        <span class="card-num" data-fr="02 / SERVICE">02 / SERVICE</span>
-        <h3 data-fr="Réceptionniste vocale IA">AI Voice Receptionist</h3>
-        <p data-fr="Nous repérons où une réceptionniste IA pourrait répondre et réserver les appels que vous manquez, jour et nuit.">We identify where an AI receptionist could answer and book the calls you are missing, day or night.</p>
+        <span class="card-num">02 / LOOK</span>
+        <h3>Quotes and follow-up</h3>
+        <p>What happens to a quote after it's sent. Most shops follow up by memory, or not at all.</p>
       </div>
       <div class="card reveal" style="--delay:.16s">
-        <span class="card-num" data-fr="03 / SERVICE">03 / SERVICE</span>
-        <h3 data-fr="Relance des clients potentiels en moins de 60 secondes">60-Second Lead Follow Up</h3>
-        <p data-fr="Nous déterminons à quelle vitesse vos clients potentiels sont réellement contactés, et le système qui ramène ce délai sous la minute.">We pinpoint how fast your leads are really being contacted, and the system that gets it under a minute.</p>
+        <span class="card-num">03 / LOOK</span>
+        <h3>Booking and confirmations</h3>
+        <p>How appointments get confirmed and reminded. Often someone retyping the same message several times a day.</p>
       </div>
       <div class="card reveal" style="--delay:.24s">
-        <span class="card-num" data-fr="04 / SERVICE">04 / SERVICE</span>
-        <h3 data-fr="Réactivation des clients potentiels">Lead Reactivation</h3>
-        <p data-fr="Nous trouvons dans votre base de données les clients potentiels inactifs et anciens clients qui pourraient redevenir des contrats réservés.">We find the dormant leads and past customers in your database that could be turned back into booked jobs.</p>
+        <span class="card-num">04 / LOOK</span>
+        <h3>Review requests</h3>
+        <p>Whether asking for reviews is something someone remembers to do, or something that happens on its own after a job.</p>
       </div>
+      <div class="card reveal" style="--delay:.32s">
+        <span class="card-num">05 / LOOK</span>
+        <h3>Past customers and old quotes</h3>
+        <p>Whether anyone goes back to the work that never closed, and how.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="missed-call">
+  <div class="container">
+    <div class="section-head" style="text-align:center; max-width:720px; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow reveal" style="margin-left:auto;margin-right:auto;">A typical example</span>
+      <h2 class="reveal" style="--delay:.08s">The call that comes in <em style="font-style:italic;color:var(--blue);">while you're under a furnace.</em></h2>
+      <p class="reveal" style="--delay:.16s">Here's one of the most common things we find, and what changing it actually looks like.</p>
+    </div>
+    <div class="ba-grid reveal" style="--delay:.2s">
+      <div class="ba-card bad">
+        <h3><span class="ba-tagbad">Today</span></h3>
+        <svg viewBox="0 0 440 132" role="img" aria-label="A call comes in while you are on a job, rings out with no callback, and you find out never">
+          <defs><marker id="arrBad" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8 z" fill="#A39E97"/></marker></defs>
+          <rect x="4" y="40" width="118" height="54" rx="12" fill="#fff" stroke="#EDEBE8"/>
+          <text x="63" y="65" text-anchor="middle" font-family="Geist,sans-serif" font-size="13" font-weight="500" fill="#0A0E14">Call comes in</text>
+          <text x="63" y="82" text-anchor="middle" font-family="Geist,sans-serif" font-size="11" fill="#69645E">you're on a job</text>
+          <path d="M126 67 h36" stroke="#A39E97" stroke-width="2" fill="none" marker-end="url(#arrBad)"/>
+          <rect x="166" y="40" width="118" height="54" rx="12" fill="#fff" stroke="#EDEBE8"/>
+          <text x="225" y="65" text-anchor="middle" font-family="Geist,sans-serif" font-size="13" font-weight="500" fill="#0A0E14">Rings out</text>
+          <text x="225" y="82" text-anchor="middle" font-family="Geist,sans-serif" font-size="11" fill="#69645E">no callback</text>
+          <path d="M288 67 h36" stroke="#A39E97" stroke-width="2" fill="none" marker-end="url(#arrBad)"/>
+          <rect x="328" y="40" width="110" height="54" rx="12" fill="#FDF3E1" stroke="#EFD9A6"/>
+          <text x="383" y="65" text-anchor="middle" font-family="Geist,sans-serif" font-size="12.5" font-weight="600" fill="#9A6B12">You find out</text>
+          <text x="383" y="82" text-anchor="middle" font-family="Geist,sans-serif" font-size="11" fill="#B07D22">never</text>
+        </svg>
+        <p class="ba-caption">Nobody leaves a voicemail anymore. They call the next name on the list, and you never know it happened. That's the part that bothers most owners: not the lost job, the not knowing.</p>
+      </div>
+      <div class="ba-card">
+        <h3><span class="ba-taggood">After</span></h3>
+        <svg viewBox="0 0 440 132" role="img" aria-label="A call comes in while you are on a job, an automatic text is sent back, and you call back when you are out">
+          <defs><marker id="arrGood" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L7 4 L0 8 z" fill="#2D6FF0"/></marker></defs>
+          <rect x="4" y="40" width="118" height="54" rx="12" fill="#fff" stroke="#EDEBE8"/>
+          <text x="63" y="65" text-anchor="middle" font-family="Geist,sans-serif" font-size="13" font-weight="500" fill="#0A0E14">Call comes in</text>
+          <text x="63" y="82" text-anchor="middle" font-family="Geist,sans-serif" font-size="11" fill="#69645E">you're on a job</text>
+          <path d="M126 67 h36" stroke="#2D6FF0" stroke-width="2" fill="none" marker-end="url(#arrGood)"/>
+          <rect x="166" y="40" width="118" height="54" rx="12" fill="#E8EFFE" stroke="#C9DCFB"/>
+          <text x="225" y="65" text-anchor="middle" font-family="Geist,sans-serif" font-size="12.5" font-weight="500" fill="#1A5BD9">Automatic text</text>
+          <text x="225" y="82" text-anchor="middle" font-family="Geist,sans-serif" font-size="11" fill="#2D6FF0">sent back</text>
+          <path d="M288 67 h36" stroke="#2D6FF0" stroke-width="2" fill="none" marker-end="url(#arrGood)"/>
+          <rect x="328" y="40" width="110" height="54" rx="12" fill="#E7F6EC" stroke="#BEE4C9"/>
+          <text x="383" y="65" text-anchor="middle" font-family="Geist,sans-serif" font-size="12.5" font-weight="600" fill="#1E7E38">You call back</text>
+          <text x="383" y="82" text-anchor="middle" font-family="Geist,sans-serif" font-size="11" fill="#2E8B4C">when you're out</text>
+        </svg>
+        <p class="ba-caption">A text goes out in seconds saying you're on a job and will call back. The customer waits instead of dialing the next number. You still handle the call yourself, just on your schedule rather than theirs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="different">
+  <div class="container">
+    <div class="section-head" style="text-align:center; max-width:720px; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow reveal" style="margin-left:auto;margin-right:auto;">Why this is different</span>
+      <h2 class="reveal" style="--delay:.08s">Your name is on <em style="font-style:italic;color:var(--blue);">the truck.</em></h2>
+      <p class="reveal" style="--delay:.16s">There's no call centre between you and the customer. No one to catch it if a message goes out wrong at 9pm. That's why most of what we recommend starts small on purpose: after hours only, or only when nobody picks up after four rings. You decide how far it goes, and we'll tell you when we think it should stop.</p>
     </div>
   </div>
 </section>
@@ -680,24 +191,30 @@
 <section id="process" style="background:#F7F6F5;">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow reveal" data-fr="Démarche">Process</span>
-      <h2 class="reveal" style="--delay:.08s"><span data-fr="Un chemin clair vers ">A clear path to </span><em style="font-style:italic;" data-fr="plus de contrats réservés.">more booked jobs.</em></h2>
+      <span class="eyebrow reveal">How it works</span>
+      <h2 class="reveal" style="--delay:.08s">From messy <em style="font-style:italic;color:var(--blue);">to mapped.</em></h2>
     </div>
-    <div class="process-grid">
+    <div class="process-grid" style="grid-template-columns:repeat(4,1fr);">
       <div class="step reveal">
         <span class="step-num">1</span>
-        <h3 data-fr="Appel stratégique gratuit">Free Strategy Call</h3>
-        <p data-fr="Nous examinons comment votre entreprise gère ses appels et ses clients potentiels aujourd'hui, et vous montrons où vous perdez des contrats.">We look at how your business handles calls and leads today, and show you where you are losing jobs.</p>
+        <h3>Request your assessment</h3>
+        <p>Tell us your name, your business and your email. We send you a short intake right after: about five minutes, no call required.</p>
+        <a href="#book" style="display:inline-block;margin-top:12px;color:var(--blue);font-weight:500;font-size:15px;">Request my assessment <span class="arr">→</span></a>
       </div>
       <div class="step reveal" style="--delay:.1s">
         <span class="step-num">2</span>
-        <h3 data-fr="Séance de découverte">Discovery Session</h3>
-        <p data-fr="Nous analysons vos chiffres, vos outils et votre flux de travail pour cartographier exactement où l'argent fuit.">We dig into your numbers, your tools, and your workflow to map exactly where the money is leaking.</p>
+        <h3>A free look at your setup</h3>
+        <p>A real person goes through your website, your booking, your Google profile and how you handle contact, and sends you what we noticed plus a map of what typically runs by hand in a shop your size. Usually around five business days. No call, no card.</p>
       </div>
       <div class="step reveal" style="--delay:.2s">
         <span class="step-num">3</span>
-        <h3 data-fr="Votre audit">Your Audit</h3>
-        <p data-fr="Nous vous remettons un rapport clair et une feuille de route priorisée présentant les systèmes d'IA exacts qui vous feront récupérer le plus de contrats, classés par rendement, afin que vous sachiez précisément quoi faire ensuite.">We hand you a clear report and a prioritized roadmap showing the exact AI systems that will win you back the most jobs, ranked by ROI, so you know precisely what to do next.</p>
+        <h3>We walk through how you actually work</h3>
+        <p>If you want the full assessment, we start with a short call: how a job moves from first call to invoice, what your team retypes, what gets forgotten. That's what the assessment is built on.</p>
+      </div>
+      <div class="step reveal" style="--delay:.3s">
+        <span class="step-num">4</span>
+        <h3>Your assessment, presented live</h3>
+        <p>We book a 60-minute call and go through it together: what can run itself, what shouldn't, how each tool actually works day to day, and a 90-day order of what to do first. The written report follows after the call.</p>
       </div>
     </div>
   </div>
@@ -706,29 +223,29 @@
 <section id="who">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow reveal" data-fr="À qui ça s'adresse">Who this helps</span>
-      <h2 class="reveal" style="--delay:.08s"><span data-fr="Conçu pour le CVC. ">Built for HVAC. </span><em style="font-style:italic;color:var(--blue);" data-fr="Rien d'autre.">Nothing else.</em></h2>
+      <span class="eyebrow reveal">Who this is for</span>
+      <h2 class="reveal" style="--delay:.08s">Built for HVAC. <em style="font-style:italic;color:var(--blue);">Nothing else.</em></h2>
     </div>
     <div class="grid-4">
       <div class="card reveal">
-        <span class="card-num" data-fr="POUR">FOR</span>
-        <h3 data-fr="Petites entreprises de CVC">Small HVAC Shops</h3>
-        <p data-fr="Vous êtes sur le terrain toute la journée et ne pouvez pas rester près du téléphone. Nous faisons en sorte que vous ne perdiez plus jamais un contrat à cause d'un appel manqué.">You are in the field all day and cannot be by the phone. We make sure you never lose a job to a missed call again.</p>
+        <span class="card-num">FOR</span>
+        <h3>Small HVAC shops</h3>
+        <p>You're in the field all day and can't sit by the phone. We show you the lowest-effort way to stop handling everything personally.</p>
       </div>
       <div class="card reveal" style="--delay:.08s">
-        <span class="card-num" data-fr="POUR">FOR</span>
-        <h3 data-fr="Entreprises en croissance">Growing Companies</h3>
-        <p data-fr="Plus d'appels que vous ne pouvez gérer, c'est plus de clients potentiels qui filent. Nous les captons tous automatiquement.">More calls than you can handle means more leads slipping through. We capture every one automatically.</p>
+        <span class="card-num">FOR</span>
+        <h3>Growing companies</h3>
+        <p>More calls than your team can keep up with means things get dropped. We show you which parts can run themselves first.</p>
       </div>
       <div class="card reveal" style="--delay:.16s">
-        <span class="card-num" data-fr="POUR">FOR</span>
-        <h3 data-fr="Entreprises multi-sites">Multi-Location Operations</h3>
-        <p data-fr="Gardez des temps de réponse rapides et constants sur tous vos sites sans ajouter de personnel de bureau.">Keep response times fast and consistent across every location without adding office staff.</p>
+        <span class="card-num">FOR</span>
+        <h3>Multi-location operations</h3>
+        <p>Every location does things slightly differently. We look at each one so you know where the manual work is piling up.</p>
       </div>
       <div class="card reveal" style="--delay:.24s">
-        <span class="card-num" data-fr="POUR">FOR</span>
-        <h3 data-fr="Entrepreneurs établis">Established Contractors</h3>
-        <p data-fr="Transformez vos années d'anciens clients et de vieux clients potentiels en un flux constant de nouveaux contrats réservés.">Turn your years of past customers and old leads into a steady stream of new booked jobs.</p>
+        <span class="card-num">FOR</span>
+        <h3>Established contractors</h3>
+        <p>Years of past customers and old quotes sitting in a filing cabinet or a spreadsheet. We show you a simple way to put them back in motion.</p>
       </div>
     </div>
   </div>
@@ -737,25 +254,25 @@
 <section id="why" style="background:#F7F6F5;">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow reveal" data-fr="Pourquoi nous choisir">Why choose us</span>
-      <h2 class="reveal" style="--delay:.08s"><span data-fr="Spécialisé. Concret. ">Specialized. Practical. </span><em style="font-style:italic;color:var(--blue);" data-fr="Conçu pour vous.">Built for you.</em></h2>
+      <span class="eyebrow reveal">Why us</span>
+      <h2 class="reveal" style="--delay:.08s">Specialized. Practical. <em style="font-style:italic;color:var(--blue);">Built for you.</em></h2>
     </div>
     <div class="why-grid">
       <div class="why-item reveal">
-        <h3 data-fr="Spécialisé en CVC">HVAC Focused</h3>
-        <p data-fr="Nous comprenons votre entreprise, vos saisons et exactement comment vous gagnez et perdez des contrats.">We understand your business, your seasons, and exactly how you lose and win jobs.</p>
+        <h3>HVAC only</h3>
+        <p>We understand your seasons, your job values, and how HVAC companies actually win and lose work. No generic small-business advice.</p>
       </div>
       <div class="why-item reveal" style="--delay:.08s">
-        <h3 data-fr="Axé sur les résultats">Outcome Focused</h3>
-        <p data-fr="Chaque recommandation se mesure en contrats réservés et en heures économisées, pas en mots à la mode.">Every recommendation is measured in jobs booked and hours saved, not buzzwords.</p>
+        <h3>Can it, or should it</h3>
+        <p>The question isn't whether something can be automated. It's whether it should be. Part of what you're paying for is being told where the answer is no.</p>
       </div>
       <div class="why-item reveal" style="--delay:.16s">
-        <h3 data-fr="Aucun casse-tête technique">No Tech Headache</h3>
-        <p data-fr="Pas de jargon, pas de surcharge. Nous vous remettons un plan clair, en langage simple, sur lequel vous ou votre équipe pouvez agir.">No jargon, no overwhelm. We hand you a clear plan in plain language that you or your team can act on.</p>
+        <h3>No tech headache</h3>
+        <p>No jargon and no overwhelm. You get a plain-language plan you or your team can act on.</p>
       </div>
       <div class="why-item reveal" style="--delay:.24s">
-        <h3 data-fr="Un vrai rendement">Real ROI</h3>
-        <p data-fr="Si un système ne se rentabilise pas, nous ne le recommandons pas.">If a system will not pay for itself, we will not recommend it.</p>
+        <h3>Honest or nothing</h3>
+        <p>If a fix will not pay for itself, we tell you to skip it. We would rather be right than sell you software you do not need.</p>
       </div>
     </div>
   </div>
@@ -764,70 +281,112 @@
 <section id="pricing">
   <div class="container">
     <div class="section-head" style="text-align:center; max-width:760px; margin-left:auto; margin-right:auto;">
-      <span class="eyebrow reveal" style="margin-left:auto;margin-right:auto;" data-fr="Tarifs">Pricing</span>
-      <h2 class="reveal" style="--delay:.08s"><span data-fr="Un point de départ ">One clear </span><em style="font-style:italic;color:var(--blue);" data-fr="clair.">starting point.</em></h2>
+      <span class="eyebrow reveal" style="margin-left:auto;margin-right:auto;">Pricing</span>
+      <h2 class="reveal" style="--delay:.08s">Start at <em style="font-style:italic;color:var(--blue);">$0.</em> Scale when it pays.</h2>
+      <p class="reveal" style="--delay:.16s">Three ways in: a free look, the full assessment, or a custom scope for larger teams. No contracts, no pressure.</p>
     </div>
-    <div class="pricing-wrap reveal" style="--delay:.16s">
-      <div class="price-card">
-        <span class="badge" data-fr="L'audit IA">The AI Audit</span>
-        <div class="price" data-fr="3&#160;000&#160;$">$3,000</div>
-        <div class="price-line" data-fr="Votre feuille de route IA complète pour le CVC">Your complete HVAC AI roadmap</div>
-        <ul class="price-list">
-          <li data-fr="Un appel stratégique gratuit pour trouver où vous perdez des contrats">A free strategy call to find where you are losing jobs</li>
-          <li data-fr="Une séance de découverte complète cartographiant votre exploitation">A full discovery session mapping your operation</li>
-          <li data-fr="Un audit détaillé avec une feuille de route priorisée">A detailed audit with a prioritized roadmap</li>
-          <li data-fr="Les systèmes d'IA exacts à déployer, classés par rendement">The exact AI systems to deploy, ranked by ROI</li>
-          <li data-fr="Des guides de démarrage simples pour chaque outil recommandé, pour savoir par où commencer">Simple starter guides for each tool we recommend, so you know how to begin</li>
-          <li data-fr="Deux semaines de soutien par courriel pour toute question sur votre rapport">2 weeks of email support for any questions about your report</li>
+    <div class="tiers reveal" style="--delay:.16s">
+      <div class="tier">
+        <div class="tier-name">Custom Assessment</div>
+        <div class="tier-price">Custom</div>
+        <p class="tier-desc">For larger teams: 20+ people or multiple locations. More people and more locations mean more places where work is still done by hand. We scope these case by case. Typically starts around $1,500 depending on locations and call volume.</p>
+        <ul class="tier-list">
+          <li>Everything in the full assessment, scoped to your size</li>
+          <li>Multi-location coverage</li>
+          <li>Priced after a short scoping call</li>
         </ul>
-        <a href="#book" class="btn btn-primary" style="width:100%; justify-content:center;"><span data-fr="Réserver un appel stratégique gratuit">Book a Free Strategy Call</span> <span class="arr">→</span></a>
+        <a href="#book" data-pick="custom" class="btn btn-outline">Contact us <span class="arr">→</span></a>
+      </div>
+
+      <div class="tier popular">
+        <span class="tier-tag">Most complete</span>
+        <div class="tier-name">Full Assessment</div>
+        <div class="tier-price">$500</div>
+        <p class="tier-desc">The full assessment. How work moves through your business today, what can be automated and what shouldn't be, how each tool works in practice, what it costs, and a 90-day order of operations. Includes a 60-minute call and a written report.</p>
+        <ul class="tier-list">
+          <li>How work moves through your business today</li>
+          <li>What can run itself and what shouldn't</li>
+          <li>How each tool works in practice, and what it costs</li>
+          <li>A 60-minute call, walked through together</li>
+          <li>A written report and a 90-day order of operations</li>
+        </ul>
+        <a href="#book" data-pick="full" class="btn btn-outline">Book my assessment <span class="arr">→</span></a>
+        <p style="margin-top:14px; font-size:12.5px; color:var(--ink-faint); line-height:1.5;">This is an assessment and a plan. Setup isn't included, and it's quoted separately if you want help with it.</p>
+      </div>
+
+      <div class="tier">
+        <span class="tier-tag">Start here</span>
+        <div class="tier-name">Free First Look</div>
+        <div class="tier-price">$0</div>
+        <p class="tier-desc">A first look at your setup and a map of what usually runs by hand in an HVAC shop. No call, no card.</p>
+        <ul class="tier-list">
+          <li>What we noticed from the outside, in plain language</li>
+          <li>A map of what usually runs by hand</li>
+          <li>Straight to your inbox. No call, no card</li>
+        </ul>
+        <a href="#book" data-pick="free" class="btn btn-outline">Get my free first look <span class="arr">→</span></a>
       </div>
     </div>
-    <p class="price-note reveal" style="--delay:.22s" data-fr="La plupart des propriétaires d'entreprises de CVC repartent en sachant exactement où ils perdent de l'argent et comment y remédier, qu'ils travaillent avec nous ou non.">Most HVAC owners walk away knowing exactly where they are losing money and how to fix it, whether they work with us or not.</p>
+
+    <p class="price-fine reveal" style="--delay:.26s">Prices in CAD, taxes extra where applicable.</p>
   </div>
 </section>
 
 <section id="faq" style="background:#F7F6F5;">
   <div class="container">
     <div class="section-head" style="text-align:center; max-width:760px; margin-left:auto; margin-right:auto;">
-      <span class="eyebrow reveal" style="margin-left:auto;margin-right:auto;" data-fr="FAQ">FAQ</span>
-      <h2 class="reveal" style="--delay:.08s"><span data-fr="Questions ">Common </span><em style="font-style:italic;" data-fr="fréquentes.">questions.</em></h2>
+      <span class="eyebrow reveal" style="margin-left:auto;margin-right:auto;">FAQ</span>
+      <h2 class="reveal" style="--delay:.08s">Common <em style="font-style:italic;">questions.</em></h2>
     </div>
     <div class="faq-list">
       <div class="faq reveal">
         <button class="faq-q" aria-expanded="false">
-          <span data-fr="Je ne suis pas une personne technique. Vais-je comprendre l'audit?">I am not a tech person. Will I understand the audit?</span>
+          <span>How does the pricing work?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner" data-fr="Oui. Nous vous remettons un rapport clair, en langage simple et sans jargon, qui montre exactement où vous perdez des contrats et quoi faire à ce sujet. Vous décidez comment et quand passer à l'action.">Yes. We hand you a clear report in plain language, no jargon, that shows exactly where you are losing jobs and what to do about it. You decide how and when to act on it.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Three levels. The free look shows you what we can spot from the outside, plus a map of what usually runs by hand in a shop your size. The $500 assessment is the full picture: how work moves through your business and what can run itself, with a call to walk through it. Larger teams get a custom scope. We charge a fair price for real work and keep it honest.</div></div>
       </div>
       <div class="faq reveal" style="--delay:.05s">
         <button class="faq-q" aria-expanded="false">
-          <span data-fr="En quoi consiste l'appel stratégique gratuit?">What does the free strategy call involve?</span>
+          <span>I've tried AI tools before and nothing stuck.</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner" data-fr="Un court appel où nous examinons comment vous gérez actuellement vos appels et vos clients potentiels, et où nous vous montrons exactement où des contrats vous échappent. Sans pression, sans engagement.">A short call where we look at how you currently handle calls and leads, and show you exactly where jobs are slipping through. No pressure, no obligation.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">That's the usual story. Most owners have an account somewhere they stopped opening. The gap isn't the tools, it's that nobody set them up around how your shop actually runs. That's the whole point of the assessment: what to turn on, in what order, and what to leave alone.</div></div>
+      </div>
+      <div class="faq reveal" style="--delay:.08s">
+        <button class="faq-q" aria-expanded="false">
+          <span>How long until I get my assessment?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">It depends on which one you choose. The free look is usually around five business days. The full and custom assessments vary with how much there is to go through. These are typical ranges, not guaranteed deadlines. If timing matters for you, just ask and we will give you a realistic window.</div></div>
       </div>
       <div class="faq reveal" style="--delay:.1s">
         <button class="faq-q" aria-expanded="false">
-          <span data-fr="L'IA va-t-elle remplacer mon personnel de bureau?">Will AI replace my office staff?</span>
+          <span>What if the assessment finds nothing worth automating?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner" data-fr="Non. L'audit identifie où l'IA pourrait gérer les appels et les clients potentiels que vous manquez actuellement, surtout en dehors des heures d'ouverture. Il s'agit de trouver des occasions que votre équipe est trop occupée pour saisir, pas de remplacer qui que ce soit.">No. The audit identifies where AI could handle the calls and leads you are currently missing, especially after hours. It is about finding opportunities your team is too busy to catch, not replacing anyone.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Then you pay nothing. If the assessment does not show you at least one process worth automating, we refund it. No forms, no argument. That guarantee covers the $500 assessment.</div></div>
       </div>
       <div class="faq reveal" style="--delay:.15s">
         <button class="faq-q" aria-expanded="false">
-          <span data-fr="À quelle vitesse vais-je voir des résultats?">How fast will I see results?</span>
+          <span>Do you implement it for me?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner" data-fr="Votre audit vous présente d'abord les occasions au meilleur rendement, classées pour que vous sachiez exactement quoi prioriser. La rapidité avec laquelle vous agissez ne dépend que de vous.">Your audit shows you the highest-ROI opportunities first, ranked so you know exactly what to prioritize. How fast you act is up to you.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">No. We assess and recommend. Most owners hand the report to whoever already handles their tech. If you'd rather have help with it, we can talk about that separately.</div></div>
       </div>
       <div class="faq reveal" style="--delay:.2s">
         <button class="faq-q" aria-expanded="false">
-          <span data-fr="Pourquoi seulement le CVC?">Why only HVAC?</span>
+          <span>Do I need to be technical to use this?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner" data-fr="Nous spécialiser signifie que nous comprenons vos saisons, la valeur de vos contrats et exactement comment les entreprises de CVC gagnent et perdent du travail. C'est cette spécialisation qui rend nos recommandations réellement efficaces.">Specializing means we understand your seasons, your job values, and exactly how HVAC companies win and lose work. That focus is what makes our recommendations actually work.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">No. The report is written in plain language for a business owner, not an IT department. Every recommendation explains what it is, how it would work day to day, and whether it is worth doing at all.</div></div>
+      </div>
+      <div class="faq reveal" style="--delay:.25s">
+        <button class="faq-q" aria-expanded="false">
+          <span>What if I don't want AI answering my phone?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Then it shouldn't. A lot of what we recommend starts small on purpose: after hours only, or only when nobody picks up after four rings, with everything during the day staying human. You decide how far it goes, and we'll tell you when we think it should stop.</div></div>
       </div>
     </div>
   </div>
@@ -835,243 +394,89 @@
 
 <section class="final" id="book">
   <div class="container">
-    <span class="eyebrow reveal" style="color:rgba(255,255,255,.6);" data-fr="Discutons">Let's talk</span>
-    <h2 class="reveal" style="--delay:.08s; margin-top:18px;"><span data-fr="Cessez de perdre des contrats que vous avez déjà ">Stop losing jobs you have already </span><em style="font-style:italic;color:#2D6FF0;" data-fr="payés.">paid for.</em></h2>
-    <p class="reveal" style="--delay:.16s" data-fr="Chaque appel manqué est un contrat que votre concurrent vient de gagner. Réservez un appel stratégique gratuit et nous vous montrerons exactement où vos revenus fuient, et comment l'IA y remédie.">Every missed call is a job your competitor just won. Book a free strategy call and we will show you exactly where you are leaking revenue, and how AI fixes it.</p>
-    <form class="contact-form reveal" method="POST" action="https://formsubmit.co/Samuelprogressai@gmail.com" style="--delay:.22s">
-      <input type="hidden" name="_subject" value="New strategy call request — ProgressAI" />
+    <span class="eyebrow reveal" style="color:rgba(255,255,255,.6);">Book your assessment</span>
+    <h2 class="reveal" style="--delay:.08s; margin-top:18px;">Let's look at <em style="font-style:italic;color:#2D6FF0;">how you actually work.</em></h2>
+    <p class="reveal" style="--delay:.16s">Let's get started. 6 quick questions, about a minute. A real person reads every request.</p>
+    <form class="contact-form step-form reveal" method="POST" action="https://formsubmit.co/samuel@progressai.ca" style="--delay:.22s" data-step-label="Step {n} of {total}">
+      <input type="hidden" name="_subject" value="New assessment request from the ProgressAI site" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://legendary-paletas-5e2fb7.netlify.app/thank-you.html" />
+      <input type="hidden" name="_next" value="https://progressai.ca/thanks-free-look" />
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-      <div class="field">
-        <label for="cf-name" data-fr="Nom">Name</label>
-        <input id="cf-name" type="text" name="name" autocomplete="name" required />
+      <div class="step-progress" hidden><div class="step-count" aria-live="polite"></div><div class="step-bar"><span></span></div></div>
+      <fieldset class="step" data-step="1">
+        <legend class="step-q" tabindex="-1">What slows your shop down the most right now?</legend>
+        <p class="step-hint">Pick the one that hurts most.</p>
+        <div class="opt-grid">
+          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Missed calls and after-hours leads" required /><span>Missed calls and after-hours leads</span></label>
+          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Scheduling and dispatch" /><span>Scheduling and dispatch</span></label>
+          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Quotes and follow-up" /><span>Quotes and follow-up</span></label>
+          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Admin and paperwork" /><span>Admin and paperwork</span></label>
+          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Not sure yet" /><span>Not sure yet</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="step" data-step="2">
+        <legend class="step-q" tabindex="-1">How many techs or trucks do you run?</legend>
+        <div class="opt-grid">
+          <label class="opt-card"><input type="radio" name="team_size" value="1-3" required /><span>1-3</span></label>
+          <label class="opt-card"><input type="radio" name="team_size" value="4-10" /><span>4-10</span></label>
+          <label class="opt-card"><input type="radio" name="team_size" value="11-25" /><span>11-25</span></label>
+          <label class="opt-card"><input type="radio" name="team_size" value="25+" /><span>25+</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="step" data-step="3">
+        <legend class="step-q" tabindex="-1">What do you run the business on today?</legend>
+        <div class="opt-grid">
+          <label class="opt-card"><input type="radio" name="software" value="ServiceTitan" required /><span>ServiceTitan</span></label>
+          <label class="opt-card"><input type="radio" name="software" value="Jobber" /><span>Jobber</span></label>
+          <label class="opt-card"><input type="radio" name="software" value="Housecall Pro" /><span>Housecall Pro</span></label>
+          <label class="opt-card"><input type="radio" name="software" value="Paper or spreadsheets" /><span>Paper or spreadsheets</span></label>
+          <label class="opt-card"><input type="radio" name="software" value="Something else" /><span>Something else</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="step" data-step="4">
+        <legend class="step-q" tabindex="-1">Which assessment are you interested in?</legend>
+        <p class="step-hint">You can change your mind later. Nothing is charged now.</p>
+        <div class="opt-grid">
+          <label class="opt-card"><input type="radio" name="assessment" value="Free First Look ($0)" data-pick="free" required /><span>Free First Look ($0)</span></label>
+          <label class="opt-card"><input type="radio" name="assessment" value="Full Assessment ($500)" data-pick="full" /><span>Full Assessment ($500)</span></label>
+          <label class="opt-card"><input type="radio" name="assessment" value="Custom Assessment (larger teams)" data-pick="custom" /><span>Custom Assessment (larger teams)</span></label>
+          <label class="opt-card"><input type="radio" name="assessment" value="Not sure yet" /><span>Not sure yet</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="step" data-step="5">
+        <legend class="step-q" tabindex="-1">Where should we send it?</legend>
+        <div class="step-fields">
+          <div class="field"><label for="cf-name">Name</label><input id="cf-name" type="text" name="name" autocomplete="name" required /></div>
+          <div class="field"><label for="cf-business">Business name</label><input id="cf-business" type="text" name="business" autocomplete="organization" required /></div>
+          <div class="field field-full"><label for="cf-email">Email</label><input id="cf-email" type="email" name="email" autocomplete="email" required /></div>
+        </div>
+      </fieldset>
+      <fieldset class="step" data-step="6">
+        <legend class="step-q" tabindex="-1">Anything else we should know? <span class="opt">(optional)</span></legend>
+        <textarea id="cf-message" name="message" rows="4" aria-label="Anything else we should know?" placeholder="e.g. a question about the assessment, or what you have already tried"></textarea>
+        <p class="micro step-consent">By sending this, you agree that ProgressAI may email you about your assessment request. We do not sell or share your information, and you can ask us to delete it at any time.</p>
+      </fieldset>
+      <div class="step-nav">
+        <button type="button" class="btn step-back" hidden>&larr; Back</button>
+        <button type="button" class="btn step-next" hidden>Next <span class="arr">→</span></button>
+        <button type="submit" class="btn form-submit">Request my assessment <span class="arr">→</span></button>
       </div>
-      <div class="field">
-        <label for="cf-business" data-fr="Nom de l'entreprise">Business Name</label>
-        <input id="cf-business" type="text" name="business" autocomplete="organization" required />
-      </div>
-      <div class="field field-full">
-        <label for="cf-email" data-fr="Courriel">Email</label>
-        <input id="cf-email" type="email" name="email" autocomplete="email" required />
-      </div>
-      <div class="field field-full">
-        <label for="cf-availability"><span data-fr="Vos disponibilités pour l'appel, les jours et heures qui vous conviennent">Your availability for the call, days and times that work for you</span><span class="opt" data-fr="(optionnel)">(optional)</span></label>
-        <textarea id="cf-availability" name="availability" rows="3" placeholder="e.g. weekday mornings, or Tue/Thu after 4pm" data-fr-ph="p. ex. en avant-midi la semaine, ou mar/jeu après 16 h"></textarea>
-      </div>
-      <div class="field field-full">
-        <label for="cf-message"><span data-fr="Message">Message</span><span class="opt" data-fr="(optionnel)">(optional)</span></label>
-        <textarea id="cf-message" name="message" rows="4"></textarea>
-      </div>
-      <button type="submit" class="btn form-submit"><span data-fr="Demander mon appel stratégique">Request My Strategy Call</span> <span class="arr">→</span></button>
     </form>
-    <div class="micro reveal" style="--delay:.28s" data-fr="Sans pression. Juste une première conversation ciblée.">No pressure. Just a focused first conversation.</div>
+    <div class="micro reveal" style="--delay:.28s">No payment now. We will email you to confirm the details, usually within one business day.</div>
   </div>
 </section>
 
 <footer>
   <div class="container footer-inner">
-    <a href="#" class="logo">
+    <a href="/" class="logo">
       <span class="logo-mark"><img src="progressai_logo_hd.png" alt="ProgressAI" /></span>
     </a>
-    <div class="footer-meta" data-fr="Systèmes d'IA pour entreprises de CVC · progressai.ca">AI systems for HVAC companies · progressai.ca</div>
-    <div class="footer-copy">© 2026 ProgressAI</div>
+    <div class="footer-meta">AI process assessments for HVAC companies · Serving Quebec and Canada · progressai.ca</div>
+    <div class="footer-copy">© 2026 Progress AI</div>
   </div>
 </footer>
 
-<script>
-(function(){
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------- i18n (EN default in HTML, FR via data-fr) ---------- */
-  const META = {
-    en: {
-      title: "ProgressAI — AI Audits for HVAC Companies",
-      desc: "ProgressAI runs AI audits for HVAC companies. We find exactly where you are losing jobs and hand you a clear roadmap of the AI systems to fix it."
-    },
-    fr: {
-      title: "ProgressAI — Audits IA pour entreprises de CVC",
-      desc: "ProgressAI réalise des audits IA pour les entreprises de CVC. Nous trouvons exactement où vous perdez des contrats et vous remettons une feuille de route claire des systèmes d'IA pour y remédier."
-    }
-  };
-  const metaDesc = document.querySelector('meta[name="description"]');
-  const i18nEls = Array.from(document.querySelectorAll('[data-fr]'));
-  i18nEls.forEach(el => { el.dataset.en = el.innerHTML; });
-  const phEls = Array.from(document.querySelectorAll('[data-fr-ph]'));
-  phEls.forEach(el => { el.dataset.enPh = el.getAttribute('placeholder') || ''; });
-  const langToggle = document.getElementById('langToggle');
-
-  const counted = new WeakSet();
-  function formatCount(el, value) {
-    const fr = document.documentElement.lang === 'fr';
-    const locale = fr ? 'fr-CA' : 'en-CA';
-    let prefix = el.dataset.prefix || '';
-    let suffix = el.dataset.suffix || '';
-    if (fr) {
-      if (el.dataset.prefixFr !== undefined) prefix = el.dataset.prefixFr;
-      if (el.dataset.suffixFr !== undefined) suffix = el.dataset.suffixFr;
-    }
-    return prefix + value.toLocaleString(locale) + suffix;
-  }
-
-  function setLang(lang) {
-    lang = (lang === 'fr') ? 'fr' : 'en';
-    document.documentElement.lang = lang;
-    document.title = META[lang].title;
-    if (metaDesc) metaDesc.setAttribute('content', META[lang].desc);
-    i18nEls.forEach(el => { el.innerHTML = (lang === 'fr') ? el.dataset.fr : el.dataset.en; });
-    phEls.forEach(el => { el.setAttribute('placeholder', (lang === 'fr') ? el.dataset.frPh : el.dataset.enPh); });
-    document.querySelectorAll('.count').forEach(el => {
-      const target = parseFloat(el.dataset.target);
-      el.textContent = formatCount(el, counted.has(el) ? target : 0);
-    });
-    // The toggle shows the language you'd switch TO.
-    if (langToggle) langToggle.textContent = (lang === 'fr') ? 'EN' : 'FR';
-    try { localStorage.setItem('pai-lang', lang); } catch (e) {}
-  }
-
-  function inView(el) {
-    const r = el.getBoundingClientRect();
-    return r.top < window.innerHeight && r.bottom > 0;
-  }
-  // Replay the page's fade-up reveals for whatever is on screen, with the
-  // same stagger as on load. Transform-only, so no layout shift.
-  function replayReveals() {
-    if (prefersReduced) return;
-    const els = Array.from(document.querySelectorAll('.reveal')).filter(inView);
-    els.forEach(el => { el.style.transition = 'none'; el.classList.remove('in'); });
-    void document.body.offsetWidth;
-    els.forEach(el => { el.style.transition = ''; });
-    void document.body.offsetWidth;
-    els.forEach(el => el.classList.add('in'));
-  }
-
-  langToggle && langToggle.addEventListener('click', () => {
-    const next = document.documentElement.lang === 'fr' ? 'en' : 'fr';
-    setLang(next);
-    replayReveals();
-  });
-
-  let savedLang = null;
-  try { savedLang = localStorage.getItem('pai-lang'); } catch (e) {}
-  if (!savedLang) {
-    savedLang = (navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en';
-  }
-  setLang(savedLang);
-
-  /* ---------- nav ---------- */
-  const nav = document.getElementById('nav');
-  const onScroll = () => {
-    if (window.scrollY > 12) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  const drawer = document.getElementById('drawer');
-  const menuBtn = document.getElementById('menuBtn');
-  menuBtn && menuBtn.addEventListener('click', () => drawer.classList.toggle('open'));
-  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
-
-  if (prefersReduced) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-  } else {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  }
-
-  function animateCount(el) {
-    if (counted.has(el)) return;
-    counted.add(el);
-    const target = parseFloat(el.dataset.target);
-    const duration = prefersReduced ? 0 : 1600;
-    if (duration === 0) { el.textContent = formatCount(el, target); return; }
-    // Reserve the final width so the box never reflows while counting up.
-    el.textContent = formatCount(el, target);
-    el.style.minWidth = Math.ceil(el.getBoundingClientRect().width) + 'px';
-    el.textContent = formatCount(el, 0);
-    const start = performance.now();
-    function frame(now) {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      const value = Math.round(target * eased);
-      el.textContent = formatCount(el, value);
-      if (t < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
-  const counts = document.querySelectorAll('.count');
-  if (counts.length) {
-    const cio = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCount(entry.target);
-          cio.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.6 });
-    counts.forEach(el => cio.observe(el));
-  }
-
-  document.querySelectorAll('.faq').forEach(faq => {
-    const q = faq.querySelector('.faq-q');
-    const a = faq.querySelector('.faq-a');
-    q.addEventListener('click', () => {
-      const isOpen = faq.classList.contains('open');
-      document.querySelectorAll('.faq.open').forEach(other => {
-        if (other !== faq) {
-          other.classList.remove('open');
-          other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-          other.querySelector('.faq-a').style.maxHeight = '0px';
-        }
-      });
-      if (isOpen) {
-        faq.classList.remove('open');
-        q.setAttribute('aria-expanded', 'false');
-        a.style.maxHeight = '0px';
-      } else {
-        faq.classList.add('open');
-        q.setAttribute('aria-expanded', 'true');
-        a.style.maxHeight = a.scrollHeight + 'px';
-      }
-    });
-  });
-
-  // The contact form posts to FormSubmit, which emails the submission and then
-  // redirects to the thank-you page (via the hidden _next field). That needs the
-  // deployed site. On a local preview (python http.server can't proxy the POST),
-  // just navigate to the thank-you page so the flow is previewable; no email is
-  // sent locally. In production this handler does nothing and FormSubmit handles it.
-  const contactForm = document.querySelector('form.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      const host = location.hostname;
-      const isLocal = host === 'localhost' || host === '127.0.0.1' || host === '';
-      if (isLocal) {
-        e.preventDefault();
-        window.location.href = 'thank-you.html';
-      }
-    });
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const id = a.getAttribute('href');
-      if (id.length > 1 && document.querySelector(id)) {
-        e.preventDefault();
-        document.querySelector(id).scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
-      }
-    });
-  });
-})();
-</script>
+<script src="/app.js"></script>
 </body>
 </html>

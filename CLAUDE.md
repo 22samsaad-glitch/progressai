@@ -2,18 +2,20 @@
 
 Single-file marketing site for **ProgressAI** — AI consulting for HVAC companies. Styled to match the Clarion Framer template (https://bulky-position-212226.framer.app/).
 
-## Files
+## Files & structure
 
-- `index.html` — the entire site (HTML + inline CSS + inline JS). No build step.
-- `progressai_logo_hd.png` — current logo (used in nav and footer).
-- `progressai_logo.png`, `progressai_logo_full.png` — earlier logo versions kept as backups.
+- `index.html` — English site at `/`. `fr/index.html` — French site at `/fr/`.
+- `styles.css` + `app.js` — **shared** CSS and JS, linked with ABSOLUTE paths (`/styles.css`, `/app.js`) by BOTH language pages. Edit these once and both languages update. (These used to be inline in index.html; extracted in the 2026 bilingual build.)
+- `thank-you.html` — form success page (English; both language forms redirect here).
+- `progressai_logo_hd.png` — current logo. `progressai_logo.png`, `progressai_logo_full.png` — backups. In `fr/index.html` the logo `src` is absolute (`/progressai_logo_hd.png`) so it resolves from the `/fr/` path.
 
-The site is self-contained: open `index.html` directly, or serve the folder.
+**Bilingual (real, EN-first):** English at `/` is the default with NO browser/IP auto-redirect. French at `/fr/` is a genuine translated page (Quebec French, "vous"). The EN/FR toggle (`#langToggle`) is a plain `<a>` link between the two routes, visible on both. hreflang + canonical set per page. **Any content change must be made in BOTH `index.html` and `fr/index.html`.**
 
 ## Deploy & contact form (decided)
 
 - **One Netlify site only: `legendary-paletas-5e2fb7.netlify.app`.** Always deploy the WHOLE folder to that same site (its Deploys tab), never drag onto "add new site" — that spawns random new sites (an old `scintillating-conkies` one exists and should be deleted). `netlify.toml` sets `publish = "."` so every file (incl. `thank-you.html`, logos) ships.
 - **The contact form uses FormSubmit, not Netlify Forms.** It POSTs to `https://formsubmit.co/Samuelprogressai@gmail.com`, which emails the lead and redirects to `thank-you.html` via the hidden `_next` field (absolute URL → update it if the domain changes). Hidden fields: `_subject`, `_template=table`, `_captcha=false`, `_honey` (honeypot). FormSubmit requires a one-time activation-email click on the first real submission.
+- **The form is a 6-step flow** (`form.step-form`, one `fieldset.step` per question): biggest challenge, team size, software, assessment, contact details, optional note. Steps 1-4 are tap-card radios that auto-advance. Without JS all steps show as one long form. Logic lives in `app.js`; pricing buttons with `data-pick="free|full|custom"` pre-select the assessment step. Questions are the same in EN and FR; change both.
 - Local preview can't POST cross-origin to FormSubmit, so a JS submit handler (in the inline script) intercepts on `localhost` and just navigates to `thank-you.html` (no email sent locally). It does nothing in production.
 
 ## Run locally
@@ -37,19 +39,31 @@ CSS custom properties live in `:root` at the top of the `<style>` block in `inde
 
 Dark sections (stat strip, final CTA) use pure `#0A0E14` — not warm brown.
 
+## Offer & positioning (current)
+
+Progress AI sells a **digital audit** (not done-for-you services). Copy must stay honest: we FIND leaks, tell you what to fix first and in what order, and offer monthly monitoring. Never claim we do the fixing. HVAC-only niche. **Rules:** no founder photo/name/bio, no fabricated testimonials/reviews/star ratings/client results, no em dashes anywhere, all claims framed as "industry data shows" not our results.
+
+**Pricing = 3-tier ladder** (`.tiers` / `.tier`): Free Teaser $0, Full Audit + Strategy Call $500 (`.tier.popular`, "Most popular"), Monthly Monitoring $497/mo. Guarantee bar references the $500 audit. Prices CAD, taxes extra. FR prices use "500 $" format. A **Done-for-you** section (`#done-for-you`, dark card) sits after pricing: implementation quoted case by case, no price/tools/timelines promised.
+
+**Config constants** live at the top of the inline `<script>`: `TALLY_FORM_URL` (still a placeholder `REPLACE_ME` — swap for the real Tally intake link; all `[data-cta="tally"]` buttons + the Process step-1 link auto-wire to it with a `?tier=` param) and `AUDIT_TURNAROUND_DAYS`.
+
+**Language:** see "Files & structure" — real bilingual, EN at `/`, FR at `/fr/`, toggle is a link. No `data-fr` runtime swap anymore.
+
 ## Section order (do not reorder without asking)
 
 1. Sticky transparent nav (gains `bg + shadow` on scroll via `.nav.scrolled`)
-2. Hero
-3. Stat strip (dark, with `#2D6FF0` accent bar above each stat)
-4. Services
-5. Process
-6. Who this helps
-7. Why choose us
-8. Pricing (single centered card)
-9. FAQ (accordion)
-10. Final CTA (dark)
-11. Footer
+2. Hero (SPLIT layout: `.hero-split` copy left, audit-mockup visual right; stacks on mobile. No star rating.)
+3. Stat strip (dark; **real numbers are in the HTML source**, count-up is progressive enhancement)
+4. Services ("What we check" — audit findings, not services)
+5. Missed-call before/after (`#missed-call`, inline SVGs)
+6. Process (4 steps, Tally intake)
+7. Who this helps
+8. Why choose us
+9. Sample audit preview (`#sample` — "Sample HVAC Co", main trust element)
+10. Pricing (3-tier ladder + guarantee bar) → Done-for-you (`#done-for-you`)
+11. FAQ (accordion)
+12. Final CTA (dark, contact form to FormSubmit)
+13. Footer
 
 All "Book a Free Strategy Call" buttons link to `#book`.
 
@@ -59,9 +73,11 @@ The nav is `.nav-inner` flex with three children: logo, `.nav-links`, `.nav-cta-
 
 Nav sizing: `.nav-inner { min-height: 88px; padding: 12px 0; overflow: visible; }`. Logo img `max-height: 60px` in nav, `28px` in footer. Hero `padding-top: calc(88px + clamp(60px, 9vw, 120px))` must stay in sync with the nav height. Mobile drawer `inset: 88px 0 0 0` likewise.
 
-## Bilingual (FR / EN)
+## Bilingual (FR / EN) — SUPERSEDED
 
-The site has a client-side language toggle (FR | EN) in the nav, right of the `.nav-links` inside `.nav-cta-wrap`.
+> Note: the full `data-fr` bilingual system described below was **removed** in the 2026 content overhaul. The site is now English-first with a FR stub (see "Offer & positioning" above). This section is kept only as a reference for how to rebuild French later.
+
+The site had a client-side language toggle (FR | EN) in the nav, right of the `.nav-links` inside `.nav-cta-wrap`.
 
 - **English is the source of truth in the HTML.** French is added as a `data-fr="…"` attribute on each translatable element (and `data-fr-ph="…"` for the one textarea placeholder). The inline i18n script captures the original English into `data-en` on load, then swaps `innerHTML` on toggle. Page still renders full English with JS off.
 - **`data-fr` must be PLAIN TEXT only — never HTML markup.** Netlify's HTML post-processing/minification mangles nested-quote markup inside attributes (it broke the thank-you button: `→' href='/'>…`). So when a heading/button has inline markup (arrow `<span class="arr">`, accent span, `<em>`, the `(optional)` `.opt` span), wrap each translatable text run in its own child element that carries a plain-text `data-fr`, and leave the markup elements as real siblings. Example: `<a ...><span data-fr="Réserver…">Book a Free Strategy Call</span> <span class="arr">→</span></a>`. Entities like `&#160;` are fine in `data-fr`; `<`, `>`, and quotes are not.

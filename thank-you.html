@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Thanks — ProgressAI</title>
-<meta name="description" content="Your strategy call request has been received." />
+<title>Thanks · Progress AI</title>
+<meta name="description" content="Your message has been received." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Headland+One&family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -104,29 +104,9 @@
     <div class="logo-wrap">
       <img src="progressai_logo_hd.png" alt="ProgressAI" />
     </div>
-    <h1><span data-fr="Merci. ">Thanks. </span><em data-fr="Nous vous contacterons bientôt.">We will be in touch.</em></h1>
-    <p data-fr="Nous avons bien reçu vos coordonnées et nous vous écrirons sous peu pour fixer une heure pour votre appel stratégique gratuit. Surveillez votre boîte de réception.">We have got your details and we will email you shortly to lock in a time for your free strategy call. Keep an eye on your inbox.</p>
-    <a href="index.html" class="btn"><span data-fr="Retour à ProgressAI">Back to ProgressAI</span> <span class="arr">→</span></a>
+    <h1>Thanks. <em>Your request is in.</em></h1>
+    <p>We have got your audit request. A real person will email you soon, usually within one business day, to confirm the details and get started. Keep an eye on your inbox.</p>
+    <a href="index.html" class="btn">Back to Progress AI <span class="arr">→</span></a>
   </main>
-  <script>
-  (function(){
-    const META = {
-      en: { title: "Thanks — ProgressAI", desc: "Your strategy call request has been received." },
-      fr: { title: "Merci — ProgressAI", desc: "Votre demande d'appel stratégique a bien été reçue." }
-    };
-    let lang = null;
-    try { lang = localStorage.getItem('pai-lang'); } catch (e) {}
-    if (!lang) lang = (navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en';
-    lang = (lang === 'fr') ? 'fr' : 'en';
-    document.documentElement.lang = lang;
-    document.title = META[lang].title;
-    const md = document.querySelector('meta[name="description"]');
-    if (md) md.setAttribute('content', META[lang].desc);
-    document.querySelectorAll('[data-fr]').forEach(el => {
-      el.dataset.en = el.innerHTML;
-      el.innerHTML = (lang === 'fr') ? el.dataset.fr : el.dataset.en;
-    });
-  })();
-  </script>
 </body>
 </html>
