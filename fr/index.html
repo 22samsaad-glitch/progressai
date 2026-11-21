@@ -28,7 +28,7 @@
 
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="/fr/" class="logo" aria-label="Accueil Progress AI">
+    <a href="/fr/" class="logo" aria-label="Accueil ProgressAI">
       <span class="logo-mark"><img src="/progressai_logo_hd.png" alt="ProgressAI" /></span>
     </a>
     <ul class="nav-links">
@@ -194,7 +194,7 @@
       <span class="eyebrow reveal">Comment ça marche</span>
       <h2 class="reveal" style="--delay:.08s">Du désordre <em style="font-style:italic;color:var(--blue);">à un plan clair.</em></h2>
     </div>
-    <div class="process-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="process-grid process-4">
       <div class="step reveal">
         <span class="step-num">1</span>
         <h3>Demandez votre évaluation</h3>
@@ -215,6 +215,11 @@
         <span class="step-num">4</span>
         <h3>Votre évaluation, présentée en direct</h3>
         <p>On planifie un appel de 60 minutes pour tout parcourir ensemble : ce qui peut se gérer seul, ce qui ne devrait pas, comment chaque outil fonctionne au quotidien, et un ordre de priorités sur 90 jours. Le rapport écrit suit après l’appel.</p>
+      </div>
+      <div class="step step-optional reveal" style="--delay:.4s">
+        <span class="step-num">5</span>
+        <h3>Optionnel : partenariat mensuel</h3>
+        <p>On règle un goulot à la fois, on forme votre équipe et on suit les chiffres avant et après.</p>
       </div>
     </div>
   </div>
@@ -283,7 +288,7 @@
     <div class="section-head" style="text-align:center; max-width:760px; margin-left:auto; margin-right:auto;">
       <span class="eyebrow reveal" style="margin-left:auto;margin-right:auto;">Tarifs</span>
       <h2 class="reveal" style="--delay:.08s">Commencez à <em style="font-style:italic;color:var(--blue);">0 $.</em> Grandissez quand ça rapporte.</h2>
-      <p class="reveal" style="--delay:.16s">Trois façons de commencer : un aperçu gratuit, l’évaluation complète, ou un forfait sur mesure pour les grandes équipes. Aucun contrat, aucune pression.</p>
+      <p class="reveal" style="--delay:.16s">Commencez par un aperçu gratuit ou l’évaluation complète, ou un forfait sur mesure pour les grandes équipes. Si vous voulez de l’aide pour mettre le plan en place ensuite, il y a le partenariat mensuel. Aucune pression.</p>
     </div>
     <div class="tiers reveal" style="--delay:.16s">
       <div class="tier">
@@ -298,8 +303,22 @@
         <a href="#book" data-pick="custom" class="btn btn-outline">Nous joindre <span class="arr">→</span></a>
       </div>
 
+      <div class="tier" id="partnership">
+        <div class="tier-name">Partenariat mensuel</div>
+        <div class="tier-price">1 000 $<span class="per">/mois</span></div>
+        <p class="tier-desc">750 $/mois pour les 3 premiers mois après votre évaluation</p>
+        <ul class="tier-list">
+          <li>Un goulot à la fois, réglé et mesuré</li>
+          <li>De nouvelles procédures avec l’IA intégrée, et votre équipe formée</li>
+          <li>Appels aux deux semaines, courriels en tout temps</li>
+          <li>Suivi avant et après pour voir le résultat</li>
+          <li>Minimum de 3 mois</li>
+        </ul>
+        <a href="#book" data-pick="full" class="btn btn-outline">Commencer par une évaluation <span class="arr">→</span></a>
+      </div>
+
       <div class="tier popular">
-        <span class="tier-tag">Le plus complet</span>
+        <span class="tier-tag">Le plus choisi</span>
         <div class="tier-name">Évaluation complète</div>
         <div class="tier-price">500 $</div>
         <p class="tier-desc">L’évaluation complète. Comment le travail circule dans votre entreprise aujourd’hui, ce qui peut être automatisé et ce qui ne devrait pas l’être, comment chaque outil fonctionne en pratique, ce qu’il coûte, et un ordre de priorités sur 90 jours. Comprend un appel de 60 minutes et un rapport écrit.</p>
@@ -309,9 +328,10 @@
           <li>Comment chaque outil fonctionne en pratique, et ce qu’il coûte</li>
           <li>Un appel de 60 minutes, parcouru ensemble</li>
           <li>Un rapport écrit et un ordre de priorités sur 90 jours</li>
+          <li>Un suivi 30 jours plus tard pour voir comment la première étape s’est passée</li>
         </ul>
         <a href="#book" data-pick="full" class="btn btn-outline">Réserver mon évaluation <span class="arr">→</span></a>
-        <p style="margin-top:14px; font-size:12.5px; color:var(--ink-faint); line-height:1.5;">C’est une évaluation et un plan. La mise en place n’est pas incluse, et elle est évaluée séparément si vous voulez de l’aide.</p>
+        <p style="margin-top:14px; font-size:12.5px; color:var(--ink-faint); line-height:1.5;">Vous voulez de l’aide pour le mettre en place ? Voyez le <a href="#partnership" style="color:var(--blue);">partenariat mensuel</a>.</p>
       </div>
 
       <div class="tier">
@@ -343,7 +363,7 @@
           <span>Comment fonctionne la tarification ?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Trois niveaux. L’aperçu gratuit vous montre ce qu’on repère de l’extérieur, plus une carte de ce qui se fait habituellement à la main dans un atelier de votre taille. L’évaluation à 500 $, c’est l’image complète : comment le travail circule dans votre entreprise et ce qui peut se gérer seul, avec un appel pour tout passer en revue. Les grandes équipes obtiennent un forfait sur mesure. Nous demandons un prix juste pour un vrai travail, et nous restons honnêtes.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Quatre options. L’aperçu gratuit vous montre ce qu’on repère de l’extérieur, plus une carte de ce qui se fait habituellement à la main dans un atelier de votre taille. L’évaluation à 500 $, c’est l’image complète : comment le travail circule dans votre entreprise, où se trouve le principal goulot, et un appel pour tout passer en revue. Les grandes équipes obtiennent un forfait sur mesure. Après l’évaluation, le partenariat mensuel optionnel coûte 1 000 $/mois (750 $/mois pour les 3 premiers mois) pour régler un goulot à la fois et mesurer le résultat. Nous demandons un prix juste pour un vrai travail, et nous restons honnêtes.</div></div>
       </div>
       <div class="faq reveal" style="--delay:.05s">
         <button class="faq-q" aria-expanded="false">
@@ -371,7 +391,7 @@
           <span>Est-ce que vous le mettez en place à ma place ?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Non. On évalue et on recommande. La plupart des propriétaires remettent le rapport à la personne qui s’occupe déjà de leur technologie. Si vous préférez de l’aide pour la mise en place, on peut en parler séparément.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">L’évaluation, c’est un diagnostic et un plan. Si vous voulez de l’aide pour le mettre en place, c’est le partenariat mensuel : on rebâtit un goulot à la fois avec vous, on forme votre équipe et on mesure le résultat. Pas de logiciel sur mesure, et tout vous appartient.</div></div>
       </div>
       <div class="faq reveal" style="--delay:.2s">
         <button class="faq-q" aria-expanded="false">
@@ -411,7 +431,7 @@
           <label class="opt-card"><input type="radio" name="biggest_challenge" value="Horaire et répartition" /><span>Horaire et répartition</span></label>
           <label class="opt-card"><input type="radio" name="biggest_challenge" value="Soumissions et suivis" /><span>Soumissions et suivis</span></label>
           <label class="opt-card"><input type="radio" name="biggest_challenge" value="Administration et paperasse" /><span>Administration et paperasse</span></label>
-          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Je ne sais pas encore" /><span>Je ne sais pas encore</span></label>
+          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Je ne sais pas" /><span>Je ne sais pas</span></label>
         </div>
       </fieldset>
       <fieldset class="step" data-step="2">
@@ -421,6 +441,7 @@
           <label class="opt-card"><input type="radio" name="team_size" value="4 à 10" /><span>4 à 10</span></label>
           <label class="opt-card"><input type="radio" name="team_size" value="11 à 25" /><span>11 à 25</span></label>
           <label class="opt-card"><input type="radio" name="team_size" value="25 et plus" /><span>25 et plus</span></label>
+          <label class="opt-card"><input type="radio" name="team_size" value="Je ne sais pas" /><span>Je ne sais pas</span></label>
         </div>
       </fieldset>
       <fieldset class="step" data-step="3">
@@ -431,6 +452,7 @@
           <label class="opt-card"><input type="radio" name="software" value="Housecall Pro" /><span>Housecall Pro</span></label>
           <label class="opt-card"><input type="radio" name="software" value="Papier ou tableurs" /><span>Papier ou tableurs</span></label>
           <label class="opt-card"><input type="radio" name="software" value="Autre chose" /><span>Autre chose</span></label>
+          <label class="opt-card"><input type="radio" name="software" value="Je ne sais pas" /><span>Je ne sais pas</span></label>
         </div>
       </fieldset>
       <fieldset class="step" data-step="4">
@@ -471,8 +493,8 @@
     <a href="/fr/" class="logo">
       <span class="logo-mark"><img src="/progressai_logo_hd.png" alt="ProgressAI" /></span>
     </a>
-    <div class="footer-meta">Évaluations de processus IA pour entreprises de CVAC · Au service du Québec et du Canada · progressai.ca</div>
-    <div class="footer-copy">© 2026 Progress AI</div>
+    <div class="footer-meta">Partenaire IA pour les entreprises en climatisation · Au service du Québec et de l’Ontario · progressai.ca</div>
+    <div class="footer-copy">© 2026 ProgressAI</div>
   </div>
 </footer>
 

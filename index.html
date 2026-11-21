@@ -194,7 +194,7 @@
       <span class="eyebrow reveal">How it works</span>
       <h2 class="reveal" style="--delay:.08s">From messy <em style="font-style:italic;color:var(--blue);">to mapped.</em></h2>
     </div>
-    <div class="process-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="process-grid process-4">
       <div class="step reveal">
         <span class="step-num">1</span>
         <h3>Request your assessment</h3>
@@ -215,6 +215,11 @@
         <span class="step-num">4</span>
         <h3>Your assessment, presented live</h3>
         <p>We book a 60-minute call and go through it together: what can run itself, what shouldn't, how each tool actually works day to day, and a 90-day order of what to do first. The written report follows after the call.</p>
+      </div>
+      <div class="step step-optional reveal" style="--delay:.4s">
+        <span class="step-num">5</span>
+        <h3>Optional: monthly partnership</h3>
+        <p>We fix one bottleneck at a time, train your team, and track the numbers before and after.</p>
       </div>
     </div>
   </div>
@@ -283,7 +288,7 @@
     <div class="section-head" style="text-align:center; max-width:760px; margin-left:auto; margin-right:auto;">
       <span class="eyebrow reveal" style="margin-left:auto;margin-right:auto;">Pricing</span>
       <h2 class="reveal" style="--delay:.08s">Start at <em style="font-style:italic;color:var(--blue);">$0.</em> Scale when it pays.</h2>
-      <p class="reveal" style="--delay:.16s">Three ways in: a free look, the full assessment, or a custom scope for larger teams. No contracts, no pressure.</p>
+      <p class="reveal" style="--delay:.16s">Start with a free look or the full assessment, or a custom scope for larger teams. If you want help putting the plan in place afterward, there's the monthly partnership. No pressure.</p>
     </div>
     <div class="tiers reveal" style="--delay:.16s">
       <div class="tier">
@@ -298,8 +303,22 @@
         <a href="#book" data-pick="custom" class="btn btn-outline">Contact us <span class="arr">→</span></a>
       </div>
 
+      <div class="tier" id="partnership">
+        <div class="tier-name">Monthly partnership</div>
+        <div class="tier-price">$1,000<span class="per">/month</span></div>
+        <p class="tier-desc">$750/month for the first 3 months after your assessment</p>
+        <ul class="tier-list">
+          <li>One bottleneck at a time, fixed and measured</li>
+          <li>New procedures with AI built in, and your team trained on them</li>
+          <li>Calls every two weeks, email anytime</li>
+          <li>Before and after tracking so you see the result</li>
+          <li>3-month minimum</li>
+        </ul>
+        <a href="#book" data-pick="full" class="btn btn-outline">Start with an assessment <span class="arr">→</span></a>
+      </div>
+
       <div class="tier popular">
-        <span class="tier-tag">Most complete</span>
+        <span class="tier-tag">Most popular</span>
         <div class="tier-name">Full Assessment</div>
         <div class="tier-price">$500</div>
         <p class="tier-desc">The full assessment. How work moves through your business today, what can be automated and what shouldn't be, how each tool works in practice, what it costs, and a 90-day order of operations. Includes a 60-minute call and a written report.</p>
@@ -309,9 +328,10 @@
           <li>How each tool works in practice, and what it costs</li>
           <li>A 60-minute call, walked through together</li>
           <li>A written report and a 90-day order of operations</li>
+          <li>A check-in 30 days later to see how the first step went</li>
         </ul>
         <a href="#book" data-pick="full" class="btn btn-outline">Book my assessment <span class="arr">→</span></a>
-        <p style="margin-top:14px; font-size:12.5px; color:var(--ink-faint); line-height:1.5;">This is an assessment and a plan. Setup isn't included, and it's quoted separately if you want help with it.</p>
+        <p style="margin-top:14px; font-size:12.5px; color:var(--ink-faint); line-height:1.5;">Want help putting it in place? See the <a href="#partnership" style="color:var(--blue);">monthly partnership</a>.</p>
       </div>
 
       <div class="tier">
@@ -344,7 +364,7 @@
           <span>How does the pricing work?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Three levels. The free look shows you what we can spot from the outside, plus a map of what usually runs by hand in a shop your size. The $500 assessment is the full picture: how work moves through your business and what can run itself, with a call to walk through it. Larger teams get a custom scope. We charge a fair price for real work and keep it honest.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Four options. The free look shows you what we can spot from the outside, plus a map of what usually runs by hand in a shop your size. The $500 assessment is the full picture: how work moves through your business, where the main bottleneck is, and a call to walk through it. Larger teams get a custom scope. After the assessment, the optional monthly partnership is $1,000/month ($750/month for the first 3 months) to fix one bottleneck at a time and measure the result. We charge a fair price for real work and keep it honest.</div></div>
       </div>
       <div class="faq reveal" style="--delay:.05s">
         <button class="faq-q" aria-expanded="false">
@@ -372,7 +392,7 @@
           <span>Do you implement it for me?</span>
           <span class="faq-icon" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">No. We assess and recommend. Most owners hand the report to whoever already handles their tech. If you'd rather have help with it, we can talk about that separately.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">The assessment itself is a diagnosis and a plan. If you want help putting it in place, that's the monthly partnership: we rebuild one bottleneck at a time with you, train your team, and measure the result. No custom software, and you own everything.</div></div>
       </div>
       <div class="faq reveal" style="--delay:.2s">
         <button class="faq-q" aria-expanded="false">
@@ -412,7 +432,7 @@
           <label class="opt-card"><input type="radio" name="biggest_challenge" value="Scheduling and dispatch" /><span>Scheduling and dispatch</span></label>
           <label class="opt-card"><input type="radio" name="biggest_challenge" value="Quotes and follow-up" /><span>Quotes and follow-up</span></label>
           <label class="opt-card"><input type="radio" name="biggest_challenge" value="Admin and paperwork" /><span>Admin and paperwork</span></label>
-          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Not sure yet" /><span>Not sure yet</span></label>
+          <label class="opt-card"><input type="radio" name="biggest_challenge" value="Not sure" /><span>Not sure</span></label>
         </div>
       </fieldset>
       <fieldset class="step" data-step="2">
@@ -422,6 +442,7 @@
           <label class="opt-card"><input type="radio" name="team_size" value="4-10" /><span>4-10</span></label>
           <label class="opt-card"><input type="radio" name="team_size" value="11-25" /><span>11-25</span></label>
           <label class="opt-card"><input type="radio" name="team_size" value="25+" /><span>25+</span></label>
+          <label class="opt-card"><input type="radio" name="team_size" value="Not sure" /><span>Not sure</span></label>
         </div>
       </fieldset>
       <fieldset class="step" data-step="3">
@@ -432,6 +453,7 @@
           <label class="opt-card"><input type="radio" name="software" value="Housecall Pro" /><span>Housecall Pro</span></label>
           <label class="opt-card"><input type="radio" name="software" value="Paper or spreadsheets" /><span>Paper or spreadsheets</span></label>
           <label class="opt-card"><input type="radio" name="software" value="Something else" /><span>Something else</span></label>
+          <label class="opt-card"><input type="radio" name="software" value="Not sure" /><span>Not sure</span></label>
         </div>
       </fieldset>
       <fieldset class="step" data-step="4">
@@ -472,8 +494,8 @@
     <a href="/" class="logo">
       <span class="logo-mark"><img src="progressai_logo_hd.png" alt="ProgressAI" /></span>
     </a>
-    <div class="footer-meta">AI process assessments for HVAC companies · Serving Quebec and Canada · progressai.ca</div>
-    <div class="footer-copy">© 2026 Progress AI</div>
+    <div class="footer-meta">AI partner for HVAC shops · Serving Quebec and Ontario · progressai.ca</div>
+    <div class="footer-copy">© 2026 ProgressAI</div>
   </div>
 </footer>
 

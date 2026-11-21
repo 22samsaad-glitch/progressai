@@ -39,11 +39,11 @@ CSS custom properties live in `:root` at the top of the `<style>` block in `inde
 
 Dark sections (stat strip, final CTA) use pure `#0A0E14` — not warm brown.
 
-## Offer & positioning (current)
+## Offer & positioning (current, Nov 2026)
 
-Progress AI sells a **digital audit** (not done-for-you services). Copy must stay honest: we FIND leaks, tell you what to fix first and in what order, and offer monthly monitoring. Never claim we do the fixing. HVAC-only niche. **Rules:** no founder photo/name/bio, no fabricated testimonials/reviews/star ratings/client results, no em dashes anywhere, all claims framed as "industry data shows" not our results.
+ProgressAI is an **AI partner for small HVAC shops**. Consulting, not software: no custom code. Ladder: free first look, then a $500 assessment that finds the main bottleneck, then an optional monthly partnership where we rebuild one bottleneck at a time with AI (written procedures, Claude Skills the team uses, features turned on in tools they already have, training) and measure the result. HVAC-only. **Rules:** no founder photo/name/bio, no fabricated testimonials/reviews/client results, no em dashes, never "done for you" or "our solutions", no tool vendor names or their prices (field-software names in the form options are OK), no turnaround for the paid assessment (only the free look's "usually around five business days"). Name is always "ProgressAI" (no space). Service area: Quebec and Ontario.
 
-**Pricing = 3-tier ladder** (`.tiers` / `.tier`): Free Teaser $0, Full Audit + Strategy Call $500 (`.tier.popular`, "Most popular"), Monthly Monitoring $497/mo. Guarantee bar references the $500 audit. Prices CAD, taxes extra. FR prices use "500 $" format. A **Done-for-you** section (`#done-for-you`, dark card) sits after pricing: implementation quoted case by case, no price/tools/timelines promised.
+**Pricing = 4 cards** (`.tiers`, 4 columns desktop, 2 under 980px, 1 under 560px), in order: Custom (from ~$1,500), Monthly partnership (`#partnership`, $1,000/month, $750/month first 3 months after the assessment, 3-month minimum), Full Assessment $500 (`.tier.popular`, "Most popular" / "Le plus choisi", includes a 30-day check-in), Free First Look $0. Prices CAD, taxes extra. FR prices use "1 000 $" format. How it works has 4 steps plus an optional 5th (`.step-optional`, full width) for the partnership.
 
 **Config constants** live at the top of the inline `<script>`: `TALLY_FORM_URL` (still a placeholder `REPLACE_ME` — swap for the real Tally intake link; all `[data-cta="tally"]` buttons + the Process step-1 link auto-wire to it with a `?tier=` param) and `AUDIT_TURNAROUND_DAYS`.
 
