@@ -3,3 +3,16 @@
 [build]
   publish = "."
   command = ""
+
+# Never serve internal notes or repo files publicly, even if they get deployed.
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.gitignore"
+  to = "/404"
+  status = 404
+  force = true
