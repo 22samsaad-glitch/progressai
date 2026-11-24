@@ -43,7 +43,7 @@ Dark sections (stat strip, final CTA) use pure `#0A0E14` — not warm brown.
 
 ProgressAI is an **AI partner for small HVAC shops**. Consulting, not software: no custom code. Ladder: free first look, then a $500 assessment that finds the main bottleneck, then an optional monthly partnership where we rebuild one bottleneck at a time with AI (written procedures, Claude Skills the team uses, features turned on in tools they already have, training) and measure the result. HVAC-only. **Rules:** no founder photo/name/bio, no fabricated testimonials/reviews/client results, no em dashes, never "done for you" or "our solutions", no tool vendor names or their prices (field-software names in the form options are OK), no turnaround for the paid assessment (only the free look's "usually around five business days"). Name is always "ProgressAI" (no space). Service area: Quebec and Ontario.
 
-**Pricing = 4 cards** (`.tiers`, 4 columns desktop, 2 under 980px, 1 under 560px), in order: Custom (from ~$1,500), Monthly partnership (`#partnership`, $1,000/month, $750/month first 3 months after the assessment, 3-month minimum), Full Assessment $500 (`.tier.popular`, "Most popular" / "Le plus choisi", includes a 30-day check-in), Free First Look $0. Prices CAD, taxes extra. FR prices use "1 000 $" format. How it works has 4 steps plus an optional 5th (`.step-optional`, full width) for the partnership.
+**Pricing = 4 cards** (`.tiers`, 4 columns desktop, 2 under 980px, 1 under 560px), in order (smallest to largest): Free First Look $0 ("Start here"), Full Assessment $500 (`.tier.popular`, "Most popular" / "Le plus choisi", includes a 30-day check-in), Monthly partnership (`#partnership`, $1,000/month, $750/month first 3 months after the assessment, 3-month minimum), Custom (from ~$1,500). Prices CAD, taxes extra. FR prices use "1 000 $" format. How it works has 4 steps plus an optional 5th (`.step-optional`, full width) for the partnership.
 
 **Config constants** live at the top of the inline `<script>`: `TALLY_FORM_URL` (still a placeholder `REPLACE_ME` — swap for the real Tally intake link; all `[data-cta="tally"]` buttons + the Process step-1 link auto-wire to it with a `?tier=` param) and `AUDIT_TURNAROUND_DAYS`.
 
@@ -100,6 +100,7 @@ The site had a client-side language toggle (FR | EN) in the nav, right of the `.
 - **No warm brown for text or dark backgrounds.** Headers stay near-black; dark sections stay `#0A0E14`.
 - **Buttons stay rectangular** with `12px` radius — not pill-shaped.
 - Mobile responsive; headings must never clip.
+- **No "AI template" tells** (removed Nov 2026, don't reintroduce): no italic blue accent words inside headings (only the hero's last line is blue, upright), no section eyebrow labels with a dash in front (only the hero keeps an eyebrow), no "01 / LOOK" or "FOR" card labels. Heading line-height stays at 1.14+ (Headland One's descenders and ascenders collide below that). Use curly apostrophes (’) in headings.
 - Two-color "ProgressAI" wordmark was tried and removed — the logo image carries the brand now, no separate text span.
 
 ## When changing the site
